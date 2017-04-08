@@ -21,6 +21,5 @@ smartlink "${HOME}/.xinitrc"     "${BASEDIR}/xinitrc"
 git clone https://github.com/mavnn/mintty-colors-solarized.git "${BASEDIR}/themes/solarized/mintty"
 git clone https://github.com/solarized/xresources.git "${BASEDIR}/themes/solarized/xresources"
 git clone https://github.com/seebi/dircolors-solarized.git "${BASEDIR}/themes/solarized/dircolors"
-git clone https://github.com/zplug/zplug "${BASEDIR}/zplug"
 
 chsh -s /bin/zsh

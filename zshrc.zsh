@@ -31,7 +31,7 @@ bindkey "^_" backward-delete-word
 #Themes
 THEMEDIR="${BASEDIR}/themes"
 eval `dircolors --sh "${THEMEDIR}/solarized/dircolors/dircolors.ansi-dark"`
-source "${THEMEDIR}/solarized/mintty/sol.dark"
+# source "${THEMEDIR}/solarized/mintty/sol.dark"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 #Completions

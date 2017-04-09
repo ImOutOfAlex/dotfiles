@@ -10,7 +10,7 @@ sudo apt-get install -y git vim zsh i3 python3 python3-pip rxvt-unicode tmux cur
 pip3 install --upgrade pip
 pip3 install py3status
 
-git clone https://github.com/mavnn/mintty-colors-solarized.git "${BASEDIR}/themes/solarized/mintty"
+# git clone https://github.com/mavnn/mintty-colors-solarized.git "${BASEDIR}/themes/solarized/mintty"
 git clone https://github.com/solarized/xresources.git "${BASEDIR}/themes/solarized/xresources"
 git clone https://github.com/seebi/dircolors-solarized.git "${BASEDIR}/themes/solarized/dircolors"
 

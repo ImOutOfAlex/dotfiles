@@ -7,7 +7,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # useful shortcuts
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 bindsym $mod+i exec sensible-browser
 bindsym $mod+l exec i3lock
 

@@ -17,7 +17,7 @@ zsh-mime-setup
 colors
 
 #Aliases
-source "${BASEDIR}/aliases"
+source "${BASEDIR}/aliases.zsh"
 
 #Key Bindings
 bindkey "^[[H" beginning-of-line

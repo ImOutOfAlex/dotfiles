@@ -13,9 +13,9 @@ smartlink () {
     ln -s "${LINK_SRC}" "${LINK_DEST}"
 }
 
-smartlink "${HOME}/.zshrc"       "${BASEDIR}/zshrc"
+smartlink "${HOME}/.zshrc"       "${BASEDIR}/zshrc.zsh"
 smartlink "${HOME}/.tmux.conf"   "${BASEDIR}/tmux.conf"
-smartlink "${HOME}/.vimrc"       "${BASEDIR}/vimrc"
+smartlink "${HOME}/.vimrc"       "${BASEDIR}/vimrc.vim"
 smartlink "${HOME}/.i3"          "${BASEDIR}/i3"
 smartlink "${HOME}/.xinitrc"     "${BASEDIR}/xinitrc"
 

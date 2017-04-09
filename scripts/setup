@@ -19,4 +19,4 @@ smartlink "${HOME}/.vimrc"       "${BASEDIR}/vimrc"
 smartlink "${HOME}/.i3"          "${BASEDIR}/i3"
 smartlink "${HOME}/.xinitrc"     "${BASEDIR}/xinitrc"
 
-sudo chsh -s /bin/zsh
+chsh -s $(which zsh)

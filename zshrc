@@ -1,6 +1,6 @@
-SCRIPT=$(readlink -f ${HOME}/.zshrc)
+SCRIPT="${HOME}/.zshrc"
+SCRIPT=$(readlink -f $SCRIPT)
 BASEDIR=$(dirname $SCRIPT)
-BASEDIR=$(realpath "${BASEDIR}/..")
 
 HISTFILE=~/.histfile
 HISTSIZE=10000

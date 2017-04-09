@@ -2,6 +2,7 @@
 
 SCRIPT=$(readlink -f $0)
 BASEDIR=`dirname $SCRIPT`
+BASEDIR="${BASEDIR}/../"
 
 sudo apt-get install -y git vim zsh i3 python3 python3-pip py3status rxvt-unicode tmux
 # sudo pacman -Sy git vim zsh i3 python3 python3-pip py3status urxvt tmux

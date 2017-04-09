@@ -6,7 +6,8 @@ BASEDIR=$(realpath "${BASEDIR}/..")
 
 sudo sh "${BASEDIR}/scripts/bootstrap"
 
-pushd "${BASEDIR}"
+pushd $BASEDIR
+sudo git reset --hard
 sudo git pull
 popd
 

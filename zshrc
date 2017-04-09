@@ -1,4 +1,4 @@
-SCRIPT=$(readlink -f $0)
+SCRIPT=$(readlink -f ${HOME}/.zshrc)
 BASEDIR=$(dirname $SCRIPT)
 BASEDIR=$(realpath "${BASEDIR}/..")
 

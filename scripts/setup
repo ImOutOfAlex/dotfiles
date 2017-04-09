@@ -17,7 +17,7 @@ smartlink "${HOME}/.zshrc"       "${BASEDIR}/zshrc.zsh"
 smartlink "${HOME}/.tmux.conf"   "${BASEDIR}/tmux.conf"
 smartlink "${HOME}/.vimrc"       "${BASEDIR}/vimrc.vim"
 smartlink "${HOME}/.i3"          "${BASEDIR}/i3"
+smartlink "${HOME}/.xprofile"    "${BASEDIR}/xprofile"
 smartlink "${HOME}/.xinitrc"     "${BASEDIR}/xinitrc"
-smartlink "${HOME}/.themes"      "${BASEDIR}/themes"
 
 sudo -u $USER chsh -s $(which zsh)

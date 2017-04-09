@@ -1,5 +1,9 @@
 #!/usr/bin/sh
 
+SCRIPT=$(readlink -f $0)
+BASEDIR=$(dirname $SCRIPT)
+BASEDIR=$(realpath "${BASEDIR}/..")
+
 smartlink () {
     LINK_DEST=$1
     LINK_SRC=$2
@@ -8,10 +12,6 @@ smartlink () {
     fi
     ln -s "${LINK_SRC}" "${LINK_DEST}"
 }
-
-SCRIPT=$(readlink -f $0)
-BASEDIR=`dirname $SCRIPT`
-BASEDIR="${BASEDIR}/../"
 
 smartlink "${HOME}/.zshrc"       "${BASEDIR}/zshrc"
 smartlink "${HOME}/.tmux.conf"   "${BASEDIR}/tmux.conf"

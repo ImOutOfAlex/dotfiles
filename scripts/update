@@ -1,8 +1,8 @@
 #!/usr/bin/sh
 
 SCRIPT=$(readlink -f $0)
-BASEDIR=`dirname $SCRIPT`
-BASEDIR="${BASEDIR}/../"
+BASEDIR=$(dirname $SCRIPT)
+BASEDIR=$(realpath "${BASEDIR}/..")
 
 sudo sh "${BASEDIR}/scripts/bootstrap"
 

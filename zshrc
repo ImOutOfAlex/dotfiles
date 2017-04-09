@@ -1,5 +1,6 @@
 SCRIPT=$(readlink -f $0)
-BASEDIR=`dirname $SCRIPT`
+BASEDIR=$(dirname $SCRIPT)
+BASEDIR=$(realpath "${BASEDIR}/..")
 
 HISTFILE=~/.histfile
 HISTSIZE=10000

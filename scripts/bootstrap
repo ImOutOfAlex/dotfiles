@@ -4,8 +4,8 @@ SCRIPT=$(readlink -f $0)
 BASEDIR=$(dirname $SCRIPT)
 BASEDIR=$(realpath "${BASEDIR}/..")
 
-sudo apt-get install -y git vim zsh i3 python3 python3-pip rxvt-unicode tmux
-# sudo pacman -Sy git vim zsh i3 python3 python3-pip py3status urxvt tmux
+sudo apt-get install -y git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl
+# sudo pacman -Sy git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl
 
 pip3 install py3status
 

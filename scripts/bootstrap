@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+
+SCRIPT=$(readlink -f $0)
+BASEDIR=`dirname $SCRIPT`
+
+sudo apt-get install git
+sudo apt-get install i3
+sudo apt-get install python3
+sudo apt-get install python3-pip
+sudo apt-get install py3status
+sudo apt-get zsh
+
+pip3 install py3status
+
+git clone https://github.com/mavnn/mintty-colors-solarized.git "${BASEDIR}/themes/solarized/mintty"
+git clone https://github.com/solarized/xresources.git "${BASEDIR}/themes/solarized/xresources"
+git clone https://github.com/seebi/dircolors-solarized.git "${BASEDIR}/themes/solarized/dircolors"
+

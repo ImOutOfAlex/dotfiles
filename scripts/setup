@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/sh
 
 smartlink () {
     LINK_DEST=$1
@@ -17,9 +17,5 @@ smartlink "${HOME}/.tmux.conf"   "${BASEDIR}/tmux.conf"
 smartlink "${HOME}/.vimrc"       "${BASEDIR}/vimrc"
 smartlink "${HOME}/.i3"          "${BASEDIR}/i3"
 smartlink "${HOME}/.xinitrc"     "${BASEDIR}/xinitrc"
-
-git clone https://github.com/mavnn/mintty-colors-solarized.git "${BASEDIR}/themes/solarized/mintty"
-git clone https://github.com/solarized/xresources.git "${BASEDIR}/themes/solarized/xresources"
-git clone https://github.com/seebi/dircolors-solarized.git "${BASEDIR}/themes/solarized/dircolors"
 
 chsh -s /bin/zsh

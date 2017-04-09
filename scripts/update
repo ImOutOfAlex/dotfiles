@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+
+SCRIPT=$(readlink -f $0)
+BASEDIR=`dirname $SCRIPT`
+
+sudo sh "${BASEDIR}/bootstrap"
+sudo apt-get update
+sudo sh "${BASEDIR}/setup"

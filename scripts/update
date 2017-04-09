@@ -3,6 +3,12 @@
 SCRIPT=$(readlink -f $0)
 BASEDIR=`dirname $SCRIPT`
 
-sudo sh "${BASEDIR}/../bootstrap"
+sudo sh "${BASEDIR}/bootstrap"
+
+pushd "${BASEDIR}/.."
+sudo git pull
+popd
+
+sudo sh "${BASEDIR}/bootstrap"
 sudo apt-get update
-sudo sh "${BASEDIR}/../setup"
+sudo sh "${BASEDIR}/setup"

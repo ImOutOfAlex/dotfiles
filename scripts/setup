@@ -12,10 +12,10 @@ smartlink () {
 SCRIPT=$(readlink -f $0)
 BASEDIR=`dirname $SCRIPT`
 
-smartlink "${HOME}/.zshrc"       "${BASEDIR}/zshrc"
-smartlink "${HOME}/.tmux.conf"   "${BASEDIR}/tmux.conf"
-smartlink "${HOME}/.vimrc"       "${BASEDIR}/vimrc"
-smartlink "${HOME}/.i3"          "${BASEDIR}/i3"
-smartlink "${HOME}/.xinitrc"     "${BASEDIR}/xinitrc"
+smartlink "${HOME}/../.zshrc"       "${BASEDIR}/zshrc"
+smartlink "${HOME}/../.tmux.conf"   "${BASEDIR}/tmux.conf"
+smartlink "${HOME}/../.vimrc"       "${BASEDIR}/vimrc"
+smartlink "${HOME}/../.i3"          "${BASEDIR}/i3"
+smartlink "${HOME}/../.xinitrc"     "${BASEDIR}/xinitrc"
 
-chsh -s /bin/zsh
+chsh -s /usr/bin/zsh

@@ -3,4 +3,4 @@
 SCRIPT="${HOME}/.zshrc"
 SCRIPTLINKED=$(readlink -f $SCRIPT)
 SCRIPTDIR=$(dirname $SCRIPTLINKED)
-export DOTFILESDIR=$(realpath "${SCRIPTDIR}\..")
+export DOTFILESDIR=$(realpath "${SCRIPTDIR}/..")

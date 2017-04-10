@@ -12,7 +12,7 @@ zsh-mime-setup
 colors
 
 #Aliases
-source "${DOTFILESDIR}/aliases.zsh"
+source "${DOTFILESDIR}/zsh/aliases.zsh"
 
 #Key Bindings
 bindkey "^[[H" beginning-of-line
@@ -49,8 +49,8 @@ zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 
 # ZPlug
-source "${DOTFILESDIR}/zplug_content.zsh"
+source "${DOTFILESDIR}/zsh/zplug_content.zsh"
 
 # Prompt
-source "${DOTFILESDIR}/prompt.zsh"
+source "${DOTFILESDIR}/zsh/prompt.zsh"
 

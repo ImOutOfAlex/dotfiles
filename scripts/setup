@@ -13,8 +13,8 @@ smartlink () {
     ln -s "${LINK_SRC}" "${LINK_DEST}"
 }
 
-smartlink "${HOME}/.zshrc"       "${DOTFILESDIR}/zshrc.zsh"
-smartlink "${HOME}/.zshenv"      "${DOTFILESDIR}/zshenv.zsh"
+smartlink "${HOME}/.zshrc"       "${DOTFILESDIR}/zsh/zshrc.zsh"
+smartlink "${HOME}/.zshenv"      "${DOTFILESDIR}/zsh/zshenv.zsh"
 smartlink "${HOME}/.tmux.conf"   "${DOTFILESDIR}/tmux.conf"
 smartlink "${HOME}/.vimrc"       "${DOTFILESDIR}/vimrc.vim"
 smartlink "${HOME}/.i3"          "${DOTFILESDIR}/i3"

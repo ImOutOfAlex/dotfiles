@@ -10,7 +10,7 @@ fi
 source ~/.zplug/init.zsh
 
 # Add a bunch more of your favorite packages!
-source "${BASEDIR}/plugins.zsh"
+source "${DOTFILESDIR}/zsh/plugins.zsh"
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then

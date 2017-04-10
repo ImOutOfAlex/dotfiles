@@ -6,9 +6,9 @@ DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
 
 update_repo() {
-    repourl=$(git -C $2 config --get remote.origin.url)
+    repourl=$(git -C $2 config --get remote.origin.url 2>/dev/null)
     ret=$?
-    if [ $ret -ne 0 ] || [ $repourl -ne $1 ]; then
+    if [ $ret -ne 0 ] || [ $repourl != $1 ]; then
         # Not a repo / Wrong URL
         sudo rm -rf $2
         sudo git clone $1 $2

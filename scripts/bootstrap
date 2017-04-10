@@ -4,6 +4,17 @@ SCRIPT=$(readlink -f $0)
 BASEDIR=$(dirname $SCRIPT)
 DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
+
+update_repo() {
+    git -C $2 rev-parse --git-dir > /dev/null 2>&1
+    if [ $? ]; then
+        sudo git clone $1 $2
+    else
+        sudo git -C $2 reset --hard
+        sudo git -C $2 pull
+    fi
+}
+
 sudo apt-get install -y git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl
 # sudo pacman -Sy git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl
 
@@ -11,6 +22,6 @@ sudo -H pip3 install --upgrade pip
 sudo -H pip3 install py3status
 
 # git clone https://github.com/mavnn/mintty-colors-solarized.git "${DOTFILESDIR}/themes/solarized/mintty"
-git clone https://github.com/solarized/xresources.git "${DOTFILESDIR}/themes/solarized/xresources"
-git clone https://github.com/seebi/dircolors-solarized.git "${DOTFILESDIR}/themes/solarized/dircolors"
+update_repo https://github.com/solarized/xresources.git "${DOTFILESDIR}/themes/solarized/xresources"
+update_repo https://github.com/seebi/dircolors-solarized.git "${DOTFILESDIR}/themes/solarized/dircolors"
 

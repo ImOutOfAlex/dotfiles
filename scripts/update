@@ -6,7 +6,7 @@ DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
 sudo sh "${DOTFILESDIR}/scripts/bootstrap"
 
-sudo git reset --hard
+sudo git -C $DOTFILESDIR reset --hard
 sudo git -C $DOTFILESDIR pull
 
 sudo sh "${DOTFILESDIR}/scripts/bootstrap"

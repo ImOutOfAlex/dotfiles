@@ -1,5 +1,4 @@
-SCRIPT=$(readlink -f $0)
-BASEDIR=`dirname $SCRIPT`
+#!/usr/bin/zsh
 
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then

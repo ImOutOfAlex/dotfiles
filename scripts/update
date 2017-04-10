@@ -2,15 +2,15 @@
 
 SCRIPT=$(readlink -f $0)
 BASEDIR=$(dirname $SCRIPT)
-BASEDIR=$(realpath "${BASEDIR}/..")
+DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
-sudo sh "${BASEDIR}/scripts/bootstrap"
+pushd $DOTFILESDIR
+sudo sh "scripts/bootstrap"
 
-pushd $BASEDIR
 sudo git reset --hard
 sudo git pull
-popd
 
-sudo sh "${BASEDIR}/scripts/bootstrap"
+sudo sh "scripts/bootstrap"
 sudo apt-get update
-sudo sh "${BASEDIR}/scripts/setup"
+sudo sh "scripts/setup"
+popd

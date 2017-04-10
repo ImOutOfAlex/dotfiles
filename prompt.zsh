@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 ERROR_PROMPT=""
 ERROR_PROMPT+="%(?"
 ERROR_PROMPT+="."

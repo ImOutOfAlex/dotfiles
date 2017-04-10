@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 #edit
 alias subl='subl3'
 alias edit='subl3'

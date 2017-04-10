@@ -1,9 +1,4 @@
 #!/usr/bin/zsh
-
-SCRIPT="${HOME}/.zshrc"
-SCRIPT=$(readlink -f $SCRIPT)
-BASEDIR=$(dirname $SCRIPT)
-
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -17,7 +12,7 @@ zsh-mime-setup
 colors
 
 #Aliases
-source "${BASEDIR}/aliases.zsh"
+source "${DOTFILESDIR}/aliases.zsh"
 
 #Key Bindings
 bindkey "^[[H" beginning-of-line
@@ -29,7 +24,7 @@ bindkey "^[[1;5D" backward-word
 bindkey "^_" backward-delete-word
 
 # DirColors
-THEMEDIR="${BASEDIR}/themes"
+THEMEDIR="${DOTFILESDIR}/themes"
 eval `dircolors --sh "${THEMEDIR}/solarized/dircolors/dircolors.ansi-dark"`
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
@@ -54,8 +49,8 @@ zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 
 # ZPlug
-source "${BASEDIR}/zplug_content.zsh"
+source "${DOTFILESDIR}/zplug_content.zsh"
 
 # Prompt
-source "${BASEDIR}/prompt.zsh"
+source "${DOTFILESDIR}/prompt.zsh"
 

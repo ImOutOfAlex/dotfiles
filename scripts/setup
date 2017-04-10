@@ -7,10 +7,10 @@ DOTFILESDIR=$(realpath "${BASEDIR}/..")
 smartlink () {
     LINK_DEST=$1
     LINK_SRC=$2
-    if [ -e "${LINK_DEST}" ]; then
-        sudo rm -rf "${LINK_DEST}";
+    if [ -h $LINK_DEST ] || [ -L $LINK_DEST ] || [ -e $LINK_DEST ]; then
+        sudo rm -rf $LINK_DEST;
     fi;
-    ln -s "${LINK_SRC}" "${LINK_DEST}"
+    ln -s $LINK_SRC $LINK_DEST
 }
 
 smartlink "${HOME}/.zshrc"       "${DOTFILESDIR}/zsh/rc.zsh"

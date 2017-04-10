@@ -28,13 +28,12 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^_" backward-delete-word
 
-#Themes
+# DirColors
 THEMEDIR="${BASEDIR}/themes"
 eval `dircolors --sh "${THEMEDIR}/solarized/dircolors/dircolors.ansi-dark"`
-# source "${THEMEDIR}/solarized/mintty/sol.dark"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-#Completions
+# Options
 setopt append_history share_history histignorealldups
 setopt prompt_subst
 setopt autocd
@@ -42,10 +41,11 @@ setopt completeinword
 setopt correct
 setopt list_ambiguous
 setopt completealiases
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-# sections completion !
+# Completions
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' verbose yes
+zstyle ':completion:*' menu select
 zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
@@ -53,9 +53,9 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=29=34"
 zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 
-#ZPlug
+# ZPlug
 source "${BASEDIR}/zplug_content.zsh"
 
-#Prompt
+# Prompt
 source "${BASEDIR}/prompt.zsh"
 

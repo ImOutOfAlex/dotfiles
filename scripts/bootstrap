@@ -1,15 +1,31 @@
 #!/usr/bin/sh
 
 SCRIPT=$(readlink -f $0)
-BASEDIR=`dirname $SCRIPT`
-BASEDIR="${BASEDIR}/../"
+BASEDIR=$(dirname $SCRIPT)
+DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
-sudo apt-get install -y git vim zsh i3 python3 python3-pip py3status rxvt-unicode tmux
-# sudo pacman -Sy git vim zsh i3 python3 python3-pip py3status urxvt tmux
 
-pip3 install py3status
+update_repo() {
+    repourl=$(git -C $2 config --get remote.origin.url 2>/dev/null)
+    ret=$?
+    if [ $ret -ne 0 ] || [ $repourl != $1 ]; then
+        # Not a repo / Wrong URL
+        sudo rm -rf $2
+        sudo git clone $1 $2
+    else
+        # Update instead
+        sudo git -C $2 reset --hard
+        sudo git -C $2 pull
+    fi
+}
 
-git clone https://github.com/mavnn/mintty-colors-solarized.git "${BASEDIR}/../themes/solarized/mintty"
-git clone https://github.com/solarized/xresources.git "${BASEDIR}/../themes/solarized/xresources"
-git clone https://github.com/seebi/dircolors-solarized.git "${BASEDIR}/../themes/solarized/dircolors"
+sudo apt-get install -y git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl
+# sudo pacman -Sy git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl
+
+sudo -H pip3 install --upgrade pip
+sudo -H pip3 install py3status
+
+# git clone https://github.com/mavnn/mintty-colors-solarized.git "${DOTFILESDIR}/themes/solarized/mintty"
+update_repo https://github.com/solarized/xresources.git "${DOTFILESDIR}/themes/solarized/xresources"
+update_repo https://github.com/seebi/dircolors-solarized.git "${DOTFILESDIR}/themes/solarized/dircolors"
 

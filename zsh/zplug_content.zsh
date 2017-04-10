@@ -1,5 +1,4 @@
-SCRIPT=$(readlink -f $0)
-BASEDIR=`dirname $SCRIPT`
+#!/usr/bin/zsh
 
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
@@ -11,7 +10,7 @@ fi
 source ~/.zplug/init.zsh
 
 # Add a bunch more of your favorite packages!
-source "${BASEDIR}/zsh_plugins.zsh"
+source "${DOTFILESDIR}/zsh/plugins.zsh"
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then

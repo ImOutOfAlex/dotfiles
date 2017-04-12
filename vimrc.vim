@@ -5,6 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'francoiscabrol/ranger.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'tpope/vim-sensible'
 Plug 'altercation/vim-colors-solarized'

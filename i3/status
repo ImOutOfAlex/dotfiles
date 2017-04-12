@@ -1,5 +1,4 @@
 general {
-    output_format = "dzen2"
     colors = true
     interval = 5
 }
@@ -14,8 +13,6 @@ order += "ethernet eth0"
 order += "cpu_temperature 0"
 order += "load"
 order += "tztime local"
-order += "tztime berlin"
-
 
 wireless wlan0 {
     format_up = "W: (%quality at %essid, %bitrate) %ip"
@@ -43,12 +40,7 @@ path_exists VPN {
 }
 
 tztime local {
-    format = "%Y-%m-%d %H:%M:%S"
-}
-
-tztime berlin {
-    format = "%Y-%m-%d %H:%M:%S %Z"
-    timezone = "Europe/Berlin"
+    format = "%Y-%m-%d %I:%M:%S %p"
 }
 
 load {

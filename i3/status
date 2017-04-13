@@ -13,6 +13,7 @@ order += "ethernet eth0"
 order += "cpu_temperature 0"
 order += "load"
 order += "tztime local"
+order += "cat_click"
 
 wireless wlan0 {
     format_up = "W: (%quality at %essid, %bitrate) %ip"

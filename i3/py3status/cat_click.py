@@ -17,8 +17,6 @@ class Py3status:
     def on_click(self, event):
         r = requests.get('http://random.cat/meow')
         if r.status_code == 200:
-            if r.headers['content-type'] == 'application/json; charset=utf8'
-                if r.encoding == 'utf-8':
-                    catdata = r.json()
-                    if 'file' in catdata:
-                        subprocess.call('feh', '--bg-center', str(catdata['file']))
+            catdata = r.json()
+            if 'file' in catdata:
+                subprocess.call('feh', '--bg-center', str(catdata['file']))

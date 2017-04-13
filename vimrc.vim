@@ -20,4 +20,5 @@ set number
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set background=dark
 colorscheme solarized
-
+hi Normal ctermbg=none
+highlight NonText ctermbg=none

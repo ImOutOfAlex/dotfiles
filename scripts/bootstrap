@@ -19,8 +19,8 @@ update_repo() {
     fi
 }
 
-sudo apt-get install -y git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl
-# sudo pacman -Sy git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl
+sudo apt-get install -y git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl compton
+# sudo pacman -Sy git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl compton
 
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install py3status

@@ -1,3 +1,6 @@
+# Compton
+exec /usr/bin/compton
+
 # Primary modifier key
 set $mod Mod4
 

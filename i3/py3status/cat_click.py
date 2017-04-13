@@ -19,4 +19,8 @@ class Py3status:
         if r.status_code == 200:
             catdata = r.json()
             if 'file' in catdata:
-                subprocess.call('feh', '--bg-center', str(catdata['file']))
+                subprocess.call([
+                    'feh',
+                    '--bg-center',
+                    str(catdata['file'])
+                ])

@@ -4,6 +4,10 @@ SCRIPT=$(readlink -f $0)
 BASEDIR=$(dirname $SCRIPT)
 DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
+sudo -v
+
+source "${DOTFILESDIR}/scripts/bootstrap"
+
 smartlink () {
     LINK_DEST=$1
     LINK_SRC=$2

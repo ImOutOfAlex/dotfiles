@@ -3,6 +3,9 @@
 SCRIPT=$(readlink -f $0)
 BASEDIR=$(dirname $SCRIPT)
 DOTFILESDIR=$(realpath "${BASEDIR}/..")
+PACKAGE_LISTS="${DOTFILESDIR}/package_lists"
+
+sudo -v
 
 
 update_repo() {
@@ -19,14 +22,26 @@ update_repo() {
     fi
 }
 
-sudo apt-get install -y git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl compton feh ranger
-# sudo pacman -Sy git vim zsh i3 python3 python3-pip rxvt-unicode tmux curl compton feh ranger
 
-sudo -H pip3 install --upgrade pip
-sudo -H pip3 install py3status
-sudo -H pip3 install requests
+# First handle Python and it's packages.
+if [ $(command -v python) ]; then
+    sudo python -m ensurepip --upgrade
+    sudo python -m pip install -r "${PACKAGE_LISTS}/pip"
+else
+    echo "You are running a system without python installed you dummy!"
+fi;
 
-# git clone https://github.com/mavnn/mintty-colors-solarized.git "${DOTFILESDIR}/themes/solarized/mintty"
-update_repo https://github.com/solarized/xresources.git "${DOTFILESDIR}/themes/solarized/xresources"
-update_repo https://github.com/seebi/dircolors-solarized.git "${DOTFILESDIR}/themes/solarized/dircolors"
+
+# Now everyone else's packages.
+if [ $(command -v apt-get) ]; then
+    sudo apt-get install -y $(grep '^.*$' "${PACKAGE_LISTS}/apt" | tr "\n" " ")
+elif [ $(command -v pacman) ]; then
+    sudo pacman -Sy $(grep '^.*$' "${PACKAGE_LISTS}/pacman" | tr "\n" " ")
+fi;
+
+
+# Finally the git repos.
+update_repo https://github.com/ImOutOfAlex/dotfiles.git $DOTFILESDIR
+update_repo https://github.com/solarized/xresources.git "~/.themes/solarized/xresources"
+update_repo https://github.com/seebi/dircolors-solarized.git "~/.themes/solarized/dircolors"
 

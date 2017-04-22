@@ -5,4 +5,4 @@ BASEDIR=$(dirname $SCRIPT)
 DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
 
-sudo sh "${DOTFILESDIR}/scripts/setup"
+. "${DOTFILESDIR}/scripts/setup"

@@ -5,6 +5,9 @@ BASEDIR=$(dirname $SCRIPT)
 DOTFILESDIR=$(realpath "${BASEDIR}/..")
 PACKAGE_LISTS="${DOTFILESDIR}/package_lists"
 
+sudo -v
+
+
 update_repo() {
     repourl=$(git -C $2 config --get remote.origin.url 2>/dev/null)
     ret=$?
@@ -18,8 +21,6 @@ update_repo() {
         sudo git -C $2 pull
     fi
 }
-
-sudo -v
 
 
 # First handle Python and it's packages.

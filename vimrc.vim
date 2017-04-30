@@ -15,14 +15,14 @@ Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'gburca/vim-logcat'
 Plug 'godlygeek/tabular'
-Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
+set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
-filetype plugin indent on    " required
-set number
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set number list
+set lcs=tab:>-,eol:¬,nbsp:~,space:•,extends:→,precedes:← sbr=↪
+
+let g:solarized_termtrans=1
+let g:solarized_visibility="low"
 set background=dark
 colorscheme solarized
-hi Normal ctermbg=none
-highlight NonText ctermbg=none

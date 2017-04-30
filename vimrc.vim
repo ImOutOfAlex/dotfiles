@@ -13,6 +13,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
+Plug 'gburca/vim-logcat'
+Plug 'godlygeek/tabular'
+Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 

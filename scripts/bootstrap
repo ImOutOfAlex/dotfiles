@@ -42,6 +42,6 @@ fi;
 
 # Finally the git repos.
 update_repo https://github.com/ImOutOfAlex/dotfiles.git $DOTFILESDIR
-update_repo https://github.com/solarized/xresources.git "~/.themes/solarized/xresources"
-update_repo https://github.com/seebi/dircolors-solarized.git "~/.themes/solarized/dircolors"
+update_repo https://github.com/solarized/xresources.git "${DOTFILESDIR}/themes/solarized/xresources"
+update_repo https://github.com/seebi/dircolors-solarized.git "${DOTFILESDIR}/themes/solarized/dircolors"
 

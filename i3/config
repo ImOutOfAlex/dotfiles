@@ -96,7 +96,6 @@ bindsym $mod+R mode "resize"
 # finds out, if available)
 bar {
         status_command py3status -c ~/.i3/status
-        tray_output primary
 }
 
 #Window stuff

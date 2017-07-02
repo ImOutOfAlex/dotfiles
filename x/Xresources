@@ -1,4 +1,4 @@
-#include "themes/solarized/xresources/Xresources.dark"
+#include "../themes/solarized/xresources/Xresources.dark"
 
 Xft.dpi:                    96
 Xft.antialias:              false

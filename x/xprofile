@@ -1,8 +1,13 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-SCRIPT=$(readlink -f $0)
+echo $_ > /dev/null
+SCRIPT=$(readlink -f $_)
 BASEDIR=$(dirname $SCRIPT)
 DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
-[[ -f "${BASEDIR}/Xresources" ]] && xrdb -merge -I$HOME "${BASEDIR}/Xresources"
+
+if [[ -f "${BASEDIR}/Xresources" ]] ; then
+    echo "FOUND" > "${HOME}/Foundfile"
+    xrdb -merge "${BASEDIR}/Xresources"
+fi
 

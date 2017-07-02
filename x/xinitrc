@@ -1,5 +1,9 @@
-#!usr/bin/env sh
+#!usr/bin/env bash
 
 # Make sure this is before the 'exec' command or it won't be sourced.
-[ -f /etc/xprofile ] && . /etc/xprofile
-[ -f ~/.xprofile ] && . ~/.xprofile
+if [ -f /etc/xprofile ] ; then
+    . /etc/xprofile
+fi
+if [ -f ~/.xprofile ] ; then
+    . ~/.xprofile
+fi

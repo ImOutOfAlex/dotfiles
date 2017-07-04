@@ -5,6 +5,7 @@ SCRIPT=$(readlink -f $_)
 BASEDIR=$(dirname $SCRIPT)
 DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
+source $DOTFILESDIR/i3/scripts/merge_configs.sh
 
 if [[ -f "${BASEDIR}/Xresources" ]] ; then
     xrdb -merge "${BASEDIR}/resources"

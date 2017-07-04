@@ -7,6 +7,6 @@ DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
 
 if [[ -f "${BASEDIR}/Xresources" ]] ; then
-    xrdb -merge "${BASEDIR}/Xresources"
+    xrdb -merge "${BASEDIR}/resources"
 fi
 

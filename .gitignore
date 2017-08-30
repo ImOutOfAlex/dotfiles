@@ -1,4 +1,5 @@
 /themes/
+/i3/config
 
 __pycache__/
 *.py[cod]

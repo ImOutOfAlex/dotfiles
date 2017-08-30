@@ -53,4 +53,3 @@ source "${DOTFILESDIR}/zsh/zplug_content.zsh"
 
 # Prompt
 source "${DOTFILESDIR}/zsh/prompt.zsh"
-

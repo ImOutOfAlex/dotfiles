@@ -15,6 +15,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'gburca/vim-logcat'
 Plug 'godlygeek/tabular'
+Plug 'ervandew/supertab'
 call plug#end()
 
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab

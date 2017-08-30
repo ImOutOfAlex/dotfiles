@@ -11,7 +11,7 @@ URxvt.geometry:             90x30
 URxvt.transparent:          false
 URxvt.fading:               0
 URxvt.loginShell:           true
-URxvt.saveLines:            50
+URxvt.saveLines:            5000
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 URxvt.background:           [80]#002b36
@@ -40,3 +40,9 @@ URxvt.cursorUnderline:      false
 
 ! Pointer
 URxvt.pointerBlank:         true
+
+! Keybinds
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C

@@ -15,13 +15,7 @@ colors
 source "${DOTFILESDIR}/zsh/aliases.zsh"
 
 #Key Bindings
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-bindkey "^[[3~" delete-char
-bindkey "^[[2~" quoted-insert
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-bindkey "^_" backward-delete-word
+source "${DOTFILESDIR}/zsh/keybinds.zsh"
 
 # DirColors
 THEMEDIR="${DOTFILESDIR}/themes"
@@ -53,4 +47,3 @@ source "${DOTFILESDIR}/zsh/zplug_content.zsh"
 
 # Prompt
 source "${DOTFILESDIR}/zsh/prompt.zsh"
-

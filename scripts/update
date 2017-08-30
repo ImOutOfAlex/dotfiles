@@ -1,6 +1,7 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
-SCRIPT=$(readlink -f $0)
+echo $_ > /dev/null
+SCRIPT=$(readlink -f $_)
 BASEDIR=$(dirname $SCRIPT)
 DOTFILESDIR=$(realpath "${BASEDIR}/..")
 

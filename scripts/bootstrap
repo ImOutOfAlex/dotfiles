@@ -1,6 +1,7 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
-SCRIPT=$(readlink -f $0)
+echo $_ > /dev/null
+SCRIPT=$(readlink -f $_)
 BASEDIR=$(dirname $SCRIPT)
 DOTFILESDIR=$(realpath "${BASEDIR}/..")
 PACKAGE_LISTS="${DOTFILESDIR}/package_lists"
@@ -26,7 +27,7 @@ update_repo() {
 # First handle Python and it's packages.
 if [ $(command -v python) ]; then
     sudo python -m ensurepip --upgrade
-    sudo python -m pip install -r "${PACKAGE_LISTS}/pip"
+    sudo -H python -m pip install -r "${PACKAGE_LISTS}/pip"
 else
     echo "You are running a system without python installed you dummy!"
 fi;
@@ -42,6 +43,6 @@ fi;
 
 # Finally the git repos.
 update_repo https://github.com/ImOutOfAlex/dotfiles.git $DOTFILESDIR
-update_repo https://github.com/solarized/xresources.git "~/.themes/solarized/xresources"
-update_repo https://github.com/seebi/dircolors-solarized.git "~/.themes/solarized/dircolors"
+update_repo https://github.com/solarized/xresources.git "${DOTFILESDIR}/themes/solarized/xresources"
+update_repo https://github.com/seebi/dircolors-solarized.git "${DOTFILESDIR}/themes/solarized/dircolors"
 

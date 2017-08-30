@@ -4,14 +4,9 @@ general {
 }
 
 order += "ipv6"
-order += "disk /"
 order += "run_watch DHCP"
-order += "run_watch VPNC"
-order += "path_exists VPN"
-order += "wireless wlan0"
-order += "ethernet eth0"
-order += "cpu_temperature 0"
 order += "load"
+order += "disk /"
 order += "tztime local"
 order += "cat_click"
 
@@ -46,11 +41,6 @@ tztime local {
 
 load {
     format = "%5min"
-}
-
-cpu_temperature 0 {
-    format = "T: %degrees °C"
-    path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
 
 disk "/" {

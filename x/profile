@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
+SCRIPT=$(readlink -f "${HOME}/.i3")
+BASEDIR=$(dirname $SCRIPT)
+DOTFILESDIR=$(realpath "${BASEDIR}")
+
 sh $HOME/.i3/scripts/merge_configs.sh
 
-if [[ -f "${BASEDIR}/Xresources" ]] ; then
-    xrdb -merge "${BASEDIR}/resources"
+if [[ -f "${DOTFILESDIR}/x/resources" ]] ; then
+    xrdb -merge "${DOTFILESDIR}/x/resources"
 fi
 

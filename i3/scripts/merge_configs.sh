@@ -2,7 +2,7 @@
 
 SCRIPT=$(readlink -f "${HOME}/.i3")
 BASEDIR=$(dirname $SCRIPT)
-DOTFILESDIR=$(realpath "${BASEDIR}/..")
+DOTFILESDIR=$(realpath "${BASEDIR}")
 
 I3_DIR=$(realpath "${DOTFILESDIR}/i3")
 I3_CONFIG=$(realpath "${I3_DIR}/config")

@@ -26,5 +26,3 @@ smartlink "${HOME}/.i3"          "${DOTFILESDIR}/i3"
 smartlink "${HOME}/.xprofile"    "${DOTFILESDIR}/x/profile"
 smartlink "${HOME}/.xsession"    "${DOTFILESDIR}/x/session"
 smartlink "${HOME}/.xinitrc"     "${DOTFILESDIR}/x/initrc"
-
-sudo -u $USER chsh -s $(which zsh)

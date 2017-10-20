@@ -15,12 +15,12 @@ colors
 source "${DOTFILESDIR}/zsh/aliases.zsh"
 
 #Key Bindings
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-bindkey "^[[3~" delete-char
-bindkey "^[[2~" quoted-insert
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
+bindkey "\e[3~" delete-char
+bindkey "\e[2~" quoted-insert
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
 bindkey "^_" backward-delete-word
 
 # DirColors

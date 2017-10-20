@@ -15,13 +15,7 @@ colors
 source "${DOTFILESDIR}/zsh/aliases.zsh"
 
 #Key Bindings
-bindkey "\e[H" beginning-of-line
-bindkey "\e[F" end-of-line
-bindkey "\e[3~" delete-char
-bindkey "\e[2~" quoted-insert
-bindkey "\e[1;5C" forward-word
-bindkey "\e[1;5D" backward-word
-bindkey "^_" backward-delete-word
+source "${DOTFILESDIR}/zsh/keybinds.zsh"
 
 # DirColors
 THEMEDIR="${DOTFILESDIR}/themes"

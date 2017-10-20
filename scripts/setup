@@ -11,7 +11,7 @@ DOTFILESDIR=$(realpath "${BASEDIR}/..")
 
 sudo -v
 
-. "${DOTFILESDIR}/scripts/bootstrap"
+source "${DOTFILESDIR}/scripts/bootstrap"
 
 smartlink () {
     LINK_DEST=$1

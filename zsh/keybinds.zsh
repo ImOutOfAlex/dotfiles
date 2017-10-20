@@ -1,20 +1,22 @@
 #!/usr/bin/zsh
 
-bindkey "\e[H" beginning-of-line
-bindkey "\e[7~" beginning-of-line
+bindkey -e
 
-bindkey "\e[F" end-of-line
-bindkey "\e[8~" end-of-line
+bindkey -e "\e[H" beginning-of-line
+bindkey -e "\e[7~" beginning-of-line
 
-bindkey "\e[3~" delete-char
+bindkey -e "\e[F" end-of-line
+bindkey -e "\e[8~" end-of-line
 
-bindkey "\e[2~" quoted-insert
+bindkey -e "\e[3~" delete-char
 
-bindkey "\e[1;5C" forward-word
+bindkey -e "\e[2~" quoted-insert
 
-bindkey "\e[1;5D" backward-word
+bindkey -e "\e[1;5C" forward-word
 
-bindkey "^[[3^" forward-delete-word
+bindkey -e "\e[1;5D" backward-word
 
-bindkey "^H" backward-delete-word
+bindkey -e "^[[3^" delete-word
+
+bindkey -e "^H" backward-delete-word
 

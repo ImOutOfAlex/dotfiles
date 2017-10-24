@@ -18,7 +18,7 @@ Plug 'godlygeek/tabular'
 Plug 'ervandew/supertab'
 call plug#end()
 
-set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 set number list
 set lcs=tab:>-,eol:¬,nbsp:~,space:•,extends:→,precedes:← sbr=↪

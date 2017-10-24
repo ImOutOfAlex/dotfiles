@@ -12,7 +12,7 @@ source ~/.zplug/init.zsh
 # Add a bunch more of your favorite packages!
 source "${DOTFILESDIR}/zsh/plugins.zsh"
 if [ -f "${HOME}/.extra/zsh_plugins" ]; then
-    source "${HOME}/.zsh_plugins"
+    source "${HOME}/.extra/zsh_plugins"
 fi
 
 # Install packages that have not been installed yet

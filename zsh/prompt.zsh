@@ -1,4 +1,5 @@
 #!/usr/bin/zsh
+# TODO: Convert this into a zsh plugin
 
 ERROR_PROMPT=""
 ERROR_PROMPT+="%(?"

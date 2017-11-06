@@ -16,6 +16,7 @@ Plug 'nvie/vim-flake8'
 Plug 'gburca/vim-logcat'
 Plug 'godlygeek/tabular'
 Plug 'ervandew/supertab'
+Plug 'mtscout6/syntastic-local-eslint.vim'
 call plug#end()
 
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
@@ -27,3 +28,14 @@ let g:solarized_termtrans=1
 let g:solarized_visibility="low"
 set background=dark
 colorscheme solarized
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+

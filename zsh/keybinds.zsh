@@ -1,4 +1,5 @@
 #!/usr/bin/zsh
+# TODO: Find a zsh plugin that does this for me...
 
 bindkey -e
 

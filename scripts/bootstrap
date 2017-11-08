@@ -1,8 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-echo $_ > /dev/null
-SCRIPT=$(readlink -f $_)
-BASEDIR=$(dirname $SCRIPT)
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+	DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+	SOURCE="$(readlink "$SOURCE")"
+	[[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+BASEDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 DOTFILESDIR=$(realpath "${BASEDIR}/..")
 PACKAGE_LISTS="${DOTFILESDIR}/package_lists"
 
@@ -44,5 +48,3 @@ fi;
 # Finally the git repos.
 update_repo https://github.com/ImOutOfAlex/dotfiles.git $DOTFILESDIR
 update_repo https://github.com/solarized/xresources.git "${DOTFILESDIR}/themes/solarized/xresources"
-update_repo https://github.com/seebi/dircolors-solarized.git "${DOTFILESDIR}/themes/solarized/dircolors"
-

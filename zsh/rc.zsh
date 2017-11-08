@@ -1,4 +1,5 @@
 #!/usr/bin/zsh
+# TODO: Replace this with a proper "source" instead of running directly.
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -15,17 +16,9 @@ colors
 source "${DOTFILESDIR}/zsh/aliases.zsh"
 
 #Key Bindings
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-bindkey "^[[3~" delete-char
-bindkey "^[[2~" quoted-insert
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-bindkey "^_" backward-delete-word
+source "${DOTFILESDIR}/zsh/keybinds.zsh"
 
 # DirColors
-THEMEDIR="${DOTFILESDIR}/themes"
-eval `dircolors --sh "${THEMEDIR}/solarized/dircolors/dircolors.ansi-dark"`
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Options
@@ -51,6 +44,13 @@ zstyle ':completion:*:killall:*' force-list always
 # ZPlug
 source "${DOTFILESDIR}/zsh/zplug_content.zsh"
 
+# Dircolors
+eval `dircolors ${ZPLUG_HOME}/repos/seebi/dircolors-solarized/dircolors.256dark`
+
 # Prompt
 source "${DOTFILESDIR}/zsh/prompt.zsh"
 
+# Extra
+if [ -f "${HOME}/.extra/rc.zsh" ]; then
+    source "${HOME}/.extra/rc.zsh"
+fi

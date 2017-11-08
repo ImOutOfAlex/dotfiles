@@ -1,4 +1,5 @@
 #!/usr/bin/zsh
+# TODO: Convert this into a zsh plugin
 
 ERROR_PROMPT=""
 ERROR_PROMPT+="%(?"
@@ -20,7 +21,7 @@ fi
 
 #GIT
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' enable git svn hg
 zstyle ':vcs_info:*' formats "%K{yellow}%F{black} %b %k%f"
 zstyle ':vcs_info:*' actionformats "%K{yellow}%F{black} %b (%a) %k%f"
 #zstyle ':vcs_info:*' check-for-changes true
@@ -61,7 +62,3 @@ precmd() {
 
     PS1="${ERROR_PROMPT}${SSH_PROMPT}${vcs_info_msg_0_}${USER_PROMPT}${DIR_PROMPT}"
 }
-
-
-
-

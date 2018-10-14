@@ -54,3 +54,4 @@ source "${DOTFILESDIR}/zsh/prompt.zsh"
 if [ -f "${HOME}/.extra/rc.zsh" ]; then
     source "${HOME}/.extra/rc.zsh"
 fi
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'

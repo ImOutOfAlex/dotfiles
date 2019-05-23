@@ -6,7 +6,7 @@ DOTFILESDIR=$(realpath "${BASEDIR}")
 
 sh $HOME/.i3/scripts/merge_configs.sh
 
-if [[ -f "${DOTFILESDIR}/x/resources" ]] ; then
+if test -f "${DOTFILESDIR}/x/resources"; then
     xrdb -merge "${DOTFILESDIR}/x/resources"
 fi
 

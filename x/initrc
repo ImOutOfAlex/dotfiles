@@ -7,3 +7,9 @@ fi
 if [ -f ~/.xprofile ] ; then
     . ~/.xprofile
 fi
+
+exec /usr/bin/lxpolkit --no-startup-id &
+
+eval `cat ~/.fehbg`
+
+exec i3

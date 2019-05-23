@@ -15,7 +15,7 @@ class Py3status:
         }
 
     def on_click(self, event):
-        r = requests.get('http://random.cat/meow')
+        r = requests.get('http://aws.random.cat/meow')
         if r.status_code == 200:
             catdata = r.json()
             if 'file' in catdata:

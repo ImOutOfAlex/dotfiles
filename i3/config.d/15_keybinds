@@ -5,7 +5,7 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvt
 bindsym $mod+i exec sensible-browser
 bindsym $mod+l exec i3lock -c 224634
-bindsym $mod+Shift+s exec shutter -s
+bindsym $mod+Shift+s exec flameshot gui
 
 # kill focused window
 bindsym $mod+Shift+q kill

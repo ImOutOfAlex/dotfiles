@@ -28,23 +28,6 @@ update_repo() {
 }
 
 
-# First handle Python and it's packages.
-if [ $(command -v python) ]; then
-    sudo python -m ensurepip --upgrade
-    sudo -H python -m pip install -r "${PACKAGE_LISTS}/pip"
-else
-    echo "You are running a system without python installed you dummy!"
-fi;
-
-
-# Now everyone else's packages.
-if [ $(command -v apt-get) ]; then
-    sudo apt-get install -y $(grep '^.*$' "${PACKAGE_LISTS}/apt" | tr "\n" " ")
-elif [ $(command -v pacman) ]; then
-    sudo pacman -Sy $(grep '^.*$' "${PACKAGE_LISTS}/pacman" | tr "\n" " ")
-fi;
-
-
 # Finally the git repos.
 update_repo https://github.com/ImOutOfAlex/dotfiles.git $DOTFILESDIR
 update_repo https://github.com/solarized/xresources.git "${DOTFILESDIR}/themes/solarized/xresources"

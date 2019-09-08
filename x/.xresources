@@ -1,5 +1,3 @@
-#include "../themes/solarized/xresources/Xresources.dark"
-
 Xft.dpi:                    96
 Xft.antialias:              false
 Xft.rgba:                   rgb

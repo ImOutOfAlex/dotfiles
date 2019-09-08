@@ -2,7 +2,7 @@
 
 if functions -q bass
     bass source /etc/profile
-    bass source <(plz --completion_script)
+    # bass source <(plz --completion_script)
 end
 
 if not functions -q fisher

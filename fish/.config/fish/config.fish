@@ -11,6 +11,3 @@ if not functions -q fisher
     fish -c fisher
 end
 
-set PATH $HOME/bin $PATH
-set PATH $HOME/.please $PATH
-

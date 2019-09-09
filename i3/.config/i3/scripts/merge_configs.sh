@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-I3_DIR=$(realpath "${HOME}/.i3")
+I3_DIR=$(realpath "${HOME}/.config/i3")
 I3_CONFIG=$(realpath "${I3_DIR}/config")
 I3_CONFIG_DIR=$(realpath "${I3_DIR}/config.d")
 

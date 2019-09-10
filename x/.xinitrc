@@ -10,6 +10,4 @@ fi
 
 exec /usr/bin/lxpolkit --no-startup-id &
 
-eval `cat ~/.fehbg`
-
 exec i3

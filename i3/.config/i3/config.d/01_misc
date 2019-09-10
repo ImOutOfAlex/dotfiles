@@ -1,5 +1,6 @@
 exec /usr/bin/compton
 exec /usr/bin/flameshot
+exec_always $HOME/.fehbg
 
 font pango:monospace 8
 new_window none

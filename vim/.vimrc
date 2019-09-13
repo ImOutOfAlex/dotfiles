@@ -7,23 +7,15 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
-" Plug 'ervandew/supertab'
 Plug 'vim-airline/vim-airline'
-" Plug 'francoiscabrol/ranger.vim'
-" Plug 'gburca/vim-logcat'
-" Plug 'godlygeek/tabular'
-" Plug 'pangloss/vim-javascript'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
-" Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
-" Plug 'vim-syntastic/syntastic'
-" Plug 'mtscout6/syntastic-local-eslint.vim'
-" Plug 'nvie/vim-flake8'
 Plug 'w0rp/ale'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab

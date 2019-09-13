@@ -1,5 +1,6 @@
 /themes/
-/i3/.i3/config
+/i3/.config/i3/config
+/fish/.config/fish/fish_variables
 
 __pycache__/
 *.py[cod]

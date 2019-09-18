@@ -29,35 +29,35 @@ function __fish_plz_arg_at -a number
 end
 
 # What to build and how to build it
-complete -f -c plz -n '__fish_plz_needs_command' -s '-c' -o '--config=' -d "Build config to use. Defaults to opt. [$PLZ_BUILD_CONFIG]"
-complete -f -c plz -n '__fish_plz_needs_command' -s '-a' -o '--arch=' -d "Architecture to compile for."
-complete -f -c plz -n '__fish_plz_needs_command' -s '-r' -o '--repo_root=' -d "Root of repository to build."
-complete -f -c plz -n '__fish_plz_needs_command' -s '-n' -o '--num_threads=' -d "Number of concurrent build operations. Default is number of CPUs + 2."
-complete -f -c plz -n '__fish_plz_needs_command' -s '-i' -o '--include=' -d "Label of targets to include in automatic detection."
-complete -f -c plz -n '__fish_plz_needs_command' -s '-e' -o '--exclude=' -d "Label of targets to exclude from automatic detection."
-complete -f -c plz -n '__fish_plz_needs_command' -s '-o' -o '--override=' -d "Options to override from .plzconfig (e.g. -o please.selfupdate:false) [$PLZ_OVERRIDES]"
-complete -f -c plz -n '__fish_plz_needs_command' -o '--profile=' -d "Configuration profile to load; e.g. --profile=dev will load .plzconfig.dev if it exists. [$PLZ_CONFIG_PROFILE]"
+complete -x -c plz -s 'c' -l 'config' -d "Build config to use. Defaults to opt. [$PLZ_BUILD_CONFIG]"
+complete -x -c plz -s 'a' -l 'arch' -d "Architecture to compile for."
+complete -x -c plz -s 'r' -l 'repo_root' -d "Root of repository to build."
+complete -x -c plz -s 'n' -l 'num_threads' -d "Number of concurrent build operations. Default is number of CPUs + 2."
+complete -x -c plz -s 'i' -l 'include' -d "Label of targets to include in automatic detection."
+complete -x -c plz -s 'e' -l 'exclude' -d "Label of targets to exclude from automatic detection."
+complete -x -c plz -s 'o' -l 'override' -d "Options to override from .plzconfig (e.g. -o please.selfupdate:false) [$PLZ_OVERRIDES]"
+complete -x -c plz -l 'profile' -d "Configuration profile to load; e.g. --profile=dev will load .plzconfig.dev if it exists. [$PLZ_CONFIG_PROFILE]"
 
 # Output and logging
 
 # Enable / Disable certain features
 
 # Help
-complete -f -c plz -n '__fish_plz_needs_command' -s '-h' -o '--help' -d "Show help message"
-complete -f -c plz -n '__fish_plz_needs_command' -o '--version' -d "Print the version of please"
+complete -x -c plz -n '__fish_plz_needs_command' -s 'h' -l 'help' -d "Show help message"
+complete -x -c plz -n '__fish_plz_needs_command' -l 'version' -d "Print the version of please"
 
 
 # build
 complete -f -c plz -n '__fish_plz_needs_command' -a build -d "Builds one or more targets"
 complete -f -c plz -n '__fish_plz_using_command build' -a '(plz query alltargets 2>/dev/null)' -d "Targets to build"
-complete -f -c plz -n '__fish_plz_using_command build' -o '--prepare' -d "Prepare build directory for these targets but don't build them."
-complete -f -c plz -n '__fish_plz_using_command build' -o '--shell' -d "Like --prepare, but opens a shell in the build directory with the appropriate environment variables."
-complete -f -c plz -n '__fish_plz_using_command build' -o '--rebuild' -d "To force the optimisation and rebuild one or more targets."
+complete -f -c plz -n '__fish_plz_using_command build' -l 'prepare' -d "Prepare build directory for these targets but don't build them."
+complete -f -c plz -n '__fish_plz_using_command build' -l 'shell' -d "Like --prepare, but opens a shell in the build directory with the appropriate environment variables."
+complete -f -c plz -n '__fish_plz_using_command build' -l 'rebuild' -d "To force the optimisation and rebuild one or more targets."
 
 # clean
 complete -f -c plz -n '__fish_plz_needs_command' -a clean -d "Cleans build artifacts"
-complete -f -c plz -n '__fish_plz_using_command clean' -s '-f' -o '--nobackground' -d "Don't fork & detach until clean is finished."
-complete -f -c plz -n '__fish_plz_using_command clean' -o '--remote' -d "Clean entire remote cache when no targets are given (default is local only)"
+complete -f -c plz -n '__fish_plz_using_command clean' -s 'f' -l 'nobackground' -d "Don't fork & detach until clean is finished."
+complete -f -c plz -n '__fish_plz_using_command clean' -l 'remote' -d "Clean entire remote cache when no targets are given (default is local only)"
 complete -f -c plz -n '__fish_plz_using_command clean' -a '(plz query alltargets 2>/dev/null)' -d "Targets to clean (default is to clean everything)"
 
 complete -f -c plz -n '__fish_plz_needs_command' -a cover -d "Builds and tests one or more targets, and calculates coverage."

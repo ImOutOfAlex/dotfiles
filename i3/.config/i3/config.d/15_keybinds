@@ -4,7 +4,7 @@ floating_modifier $mod
 # useful shortcuts
 bindsym $mod+Return exec urxvt
 bindsym $mod+i exec sensible-browser
-bindsym $mod+l exec i3lock -c 224634
+bindsym $mod+l exec $HOME/.config/i3/scripts/power_features/lock.sh
 bindsym $mod+Shift+f exec flameshot gui
 
 # kill focused window

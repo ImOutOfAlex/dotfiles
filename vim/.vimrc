@@ -13,11 +13,13 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'preservim/nerdcommenter'
 Plug 'w0rp/ale'
 Plug 'mattn/vim-lsp-settings'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
@@ -57,7 +59,10 @@ endfunction
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-nmap <C-p> :FZF<CR>
+imap <C-_> <esc> <plug>NERDCommenterToggle hj
+nmap <C-_> <plug>NERDCommenterToggle hj
+nmap <C-p> :Lines<CR>
+cmap <C-p> Commands<CR>
 imap <C-space> <Plug>(asyncomplete_force_refresh)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -69,6 +74,14 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 set completeopt+=preview
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
+augroup netrw_mapping
+    autocmd!
+    autocmd filetype netrw call NetrwMapping()
+augroup END
+
+function! NetrwMapping()
+    noremap <buffer> <C-p> :Files %<cr>
+endfunction
 
 " for asyncomplete.vim log
 let g:asyncomplete_auto_popup = 1

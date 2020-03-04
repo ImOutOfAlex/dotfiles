@@ -31,7 +31,6 @@ let g:solarized_visibility="low"
 set background=dark
 colorscheme solarized
 
-
 if executable('pyls')
     " pip install python-language-server
     au User lsp_setup call lsp#register_server({
@@ -42,7 +41,7 @@ if executable('pyls')
 endif
 
 if executable('racket')
-    " racket
+    " raco install racket-language-server
     au User lsp_setup call lsp#register_server({
         \ 'name': 'racket-language-server',
         \ 'cmd': ['racket', '-l', 'racket-language-server'],
@@ -58,7 +57,7 @@ endfunction
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-nmap <C-a> FZF
+nmap <C-p> :FZF<CR>
 imap <C-space> <Plug>(asyncomplete_force_refresh)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)

@@ -93,4 +93,19 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
+" Tab navigation
+nnoremap <C-W>    :q<CR>
+inoremap <C-W>    <Esc>:q<CR>i
+cnoremap <C-W>    <Esc>:q<CR>:
 
+nnoremap <C-S-Tab> :tabprevious<CR>
+inoremap <C-S-Tab> <Esc>:tabprevious<CR>i
+cnoremap <C-S-Tab> <Esc>:tabprevious<CR>:
+
+nmap <C-Tab>   gt
+inoremap <C-Tab>   <Esc>:tabnext<CR>i
+cnoremap <C-Tab>   <Esc>:tabnext<CR>:
+
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-t>     <Esc>:tabnew<CR>
+cnoremap <C-t>     <Esc>:tabnew<CR>:

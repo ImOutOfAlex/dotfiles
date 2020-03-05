@@ -21,6 +21,9 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'svermeulen/vim-cutlass'
+Plug 'svermeulen/vim-yoink'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
@@ -30,7 +33,7 @@ call plug#end()
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 set number list
-set lcs=tab:>-,eol:¬,nbsp:~,space:•,extends:→,precedes:← sbr=↪
+set lcs=tab:>-,eol:¬,nbsp:~,trail:•,extends:→,precedes:← sbr=↪
 let g:solarized_termtrans=1
 let g:solarized_visibility="low"
 set background=dark
@@ -77,6 +80,10 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 set completeopt+=preview
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
+
+" Clipboard
+let &clipboard = "unnamed"
+let g:yoinkIncludeDeleteOperations = 1
 
 " Commenter
 imap <C-_> <esc>gccji

@@ -33,7 +33,8 @@ call plug#end()
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 set number list
-set lcs=tab:>-,eol:¬,nbsp:~,trail:•,extends:→,precedes:← sbr=↪
+" set lcs=tab:>-,eol:¬,nbsp:~,trail:•,extends:→,precedes:← sbr=↪
+set lcs=trail:•,extends:→,precedes:← sbr=↪
 let g:solarized_termtrans=1
 let g:solarized_visibility="low"
 set background=dark

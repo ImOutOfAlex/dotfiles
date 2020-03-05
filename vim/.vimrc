@@ -13,17 +13,20 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'preservim/nerdcommenter'
 Plug 'w0rp/ale'
 Plug 'mattn/vim-lsp-settings'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
+
+" Styling
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 set number list
@@ -33,6 +36,8 @@ let g:solarized_visibility="low"
 set background=dark
 colorscheme solarized
 
+
+" LSP Config
 if executable('pyls')
     " pip install python-language-server
     au User lsp_setup call lsp#register_server({
@@ -59,8 +64,6 @@ endfunction
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-imap <C-_> <esc> <plug>NERDCommenterToggle hj
-nmap <C-_> <plug>NERDCommenterToggle hj
 nmap <C-p> :Lines<CR>
 cmap <C-p> Commands<CR>
 imap <C-space> <Plug>(asyncomplete_force_refresh)
@@ -74,6 +77,13 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 set completeopt+=preview
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
+
+" Commenter
+imap <C-_> <esc>gccji
+nmap <C-_> gccj
+
+
+" netrw stuff
 augroup netrw_mapping
     autocmd!
     autocmd filetype netrw call NetrwMapping()
@@ -82,6 +92,27 @@ augroup END
 function! NetrwMapping()
     noremap <buffer> <C-p> :Files %<cr>
 endfunction
+
+
+" vim dispatch
+autocmd FileType scheme let b:dispatch = 'raco test %'
+
+if executable("pytest")
+    autocmd FileType python let b:dispatch = 'pytest "%"'
+elseif executable("nose")
+    autocmd FileType python let b:dispatch = 'nose "%"'
+elseif executable("python")
+    autocmd FileType python let b:dispatch = 'python -m unittest "%"'
+endif
+
+nnoremap <C-d>    :Dispatch<CR>
+inoremap <C-d>    <Esc>:Dispatch<CR>i
+cnoremap <C-d>    <Esc>:Dispatch<CR>:
+
+nnoremap <C-b>    :Make<CR>
+inoremap <C-b>    <Esc>:Make<CR>i
+cnoremap <C-b>    <Esc>:Make<CR>:
+
 
 " for asyncomplete.vim log
 let g:asyncomplete_auto_popup = 1
@@ -92,6 +123,7 @@ let g:lsp_highlight_references_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
 
 " Tab navigation
 nnoremap <C-s>    :w<CR>

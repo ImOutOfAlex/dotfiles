@@ -1,3 +1,59 @@
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
 general {
     colors = true
     interval = 5
@@ -46,3 +102,2605 @@ load {
 disk "/" {
     format = "%free"
 }
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Bright, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#a1c659"
+    color_bad = "fb0120"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Tomorrow, by Chris Kempson (http://chriskempson.com)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#b5bd68"
+    color_bad = "cc6666"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Colors, by mrmrs (http://clrs.cc)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#2ecc40"
+    color_bad = "ff4136"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Colors, by mrmrs (http://clrs.cc)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#2ecc40"
+    color_bad = "ff4136"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Colors, by mrmrs (http://clrs.cc)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#2ecc40"
+    color_bad = "ff4136"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Colors, by mrmrs (http://clrs.cc)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#2ecc40"
+    color_bad = "ff4136"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Seti UI, by 
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#9fca56"
+    color_bad = "Cd3f45"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Seti UI, by 
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#9fca56"
+    color_bad = "Cd3f45"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Seti UI, by 
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#9fca56"
+    color_bad = "Cd3f45"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Seti UI, by 
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#9fca56"
+    color_bad = "Cd3f45"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Atelier Sulphurpool, by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/sulphurpool)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#ac9739"
+    color_bad = "c94922"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "run_watch DHCP"
+order += "load"
+order += "disk /"
+order += "tztime local"
+order += "cat_click"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires the cap_net_admin capability
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}
+
+load {
+    format = "%5min"
+}
+
+disk "/" {
+    format = "%free"
+}
+# ~/.i3status.conf
+# Base16 Atelier Sulphurpool, by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/sulphurpool)
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#ac9739"
+    color_bad = "c94922"
+    ## remember to add your prefered interval
+    # interval = 5
+}
+
+## remember to add the rest of your configure
+

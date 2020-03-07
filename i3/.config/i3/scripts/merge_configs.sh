@@ -11,6 +11,7 @@ FORMAT_STRING="# This is an auto generated file. Do not modify.\n"
 if [ -d $I3_CONFIG_DIR ]; then
     echo $FORMAT_STRING > $I3_CONFIG
     cat $I3_CONFIG_DIR/* >> $I3_CONFIG
+    echo $FORMAT_STRING > $I3_STATUS_CONFIG
     cat $I3_STATUS_CONFIG_DIR/* >> $I3_STATUS_CONFIG
 fi
 

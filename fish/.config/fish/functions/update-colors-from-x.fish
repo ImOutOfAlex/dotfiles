@@ -51,7 +51,6 @@ function update-colors-from-x --description 'Update the colors from x'
         function put_template_custom; printf '\033]%s%s\033\\' $argv; end;
     end
 
-    echo "Check2"
     # 16 color space
     put_template 0  $color00
     put_template 1  $color01
@@ -77,7 +76,6 @@ function update-colors-from-x --description 'Update the colors from x'
     put_template 20 $color20
     put_template 21 $color21
 
-    echo "Check3"
     # foreground / background / cursor color
     if test -n "$ITERM_SESSION_ID"
         # iTerm2 proprietary escape codes
@@ -92,14 +90,13 @@ function update-colors-from-x --description 'Update the colors from x'
         put_template_var 10 $colorfg
         if [ "$BASE16_SHELL_SET_BACKGROUND" != false ]
             put_template_var 11 $colorbg
-            if string match 'rxvt*' $TERM # [ "${TERM%%-*}" = "rxvt" ]
+            if string match 'rxvt*' $TERM 1>/dev/null
                 put_template_var 708 $colorbg # internal border (rxvt)
             end
         end
         put_template_custom 12 ";7" # cursor (reverse video)
     end
 
-    echo "Check4"
     # set syntax highlighting colors
     set -U fish_color_autosuggestion (echo $color19 | sed 's/\///g')
     set -U fish_color_cancel -r

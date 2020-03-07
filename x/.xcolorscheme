@@ -1,22 +1,22 @@
-! Base16 Cupcake
-! Scheme: Chris Kempson (http://chriskempson.com)
+! Base16 Atelier Estuary
+! Scheme: Bram de Haan (http://atelierbramdehaan.nl)
 
-#define base00 #fbf1f2
-#define base01 #f2f1f4
-#define base02 #d8d5dd
-#define base03 #bfb9c6
-#define base04 #a59daf
-#define base05 #8b8198
-#define base06 #72677e
-#define base07 #585062
-#define base08 #d57e85
-#define base09 #ebb790
-#define base0A #dcb16c
-#define base0B #a3b367
-#define base0C #69a9a7
-#define base0D #7297b9
-#define base0E #bb99b4
-#define base0F #baa58c
+#define base00 #22221b
+#define base01 #302f27
+#define base02 #5f5e4e
+#define base03 #6c6b5a
+#define base04 #878573
+#define base05 #929181
+#define base06 #e7e6df
+#define base07 #f4f3ec
+#define base08 #ba6236
+#define base09 #ae7313
+#define base0A #a5980d
+#define base0B #7d9726
+#define base0C #5b9d48
+#define base0D #36a166
+#define base0E #5f9182
+#define base0F #9d6c7c
 
 *foreground:   base05
 #ifdef background_opacity

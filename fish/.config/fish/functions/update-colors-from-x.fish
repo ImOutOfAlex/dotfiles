@@ -1,27 +1,31 @@
+function get-color
+    echo (xrdb -query | grep $argv: | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//' | sed -e 's/\(.*\)/\U\1/g');
+end
+
 function update-colors-from-x --description 'Update the colors from x'
-    set color00 (xrdb -query | grep color0 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color01 (xrdb -query | grep color1 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color02 (xrdb -query | grep color2 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color03 (xrdb -query | grep color3 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color04 (xrdb -query | grep color4 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color05 (xrdb -query | grep color5 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color06 (xrdb -query | grep color6 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color07 (xrdb -query | grep color7 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color08 (xrdb -query | grep color8 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
+    set color00 (get-color color0)
+    set color01 (get-color color1)
+    set color02 (get-color color2)
+    set color03 (get-color color3)
+    set color04 (get-color color4)
+    set color05 (get-color color5)
+    set color06 (get-color color6)
+    set color07 (get-color color7)
+    set color08 (get-color color8)
     set color09 $color01;
     set color10 $color02;
     set color11 $color03;
     set color12 $color04;
     set color13 $color05;
     set color14 $color06;
-    set color15 (xrdb -query | grep color15 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
+    set color15 (get-color color15)
 
-    set color16 (xrdb -query | grep color9 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color17 (xrdb -query | grep color14 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color18 (xrdb -query | grep color10 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color19 (xrdb -query | grep color11 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color20 (xrdb -query | grep color12 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
-    set color21 (xrdb -query | grep color13 | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//');
+    set color16 (get-color color9)
+    set color17 (get-color color14)
+    set color18 (get-color color10)
+    set color19 (get-color color11)
+    set color20 (get-color color12)
+    set color21 (get-color color13)
 
     set colorfg $color07;
     set colorbg $color00;
@@ -47,6 +51,7 @@ function update-colors-from-x --description 'Update the colors from x'
         function put_template_custom; printf '\033]%s%s\033\\' $argv; end;
     end
 
+    echo "Check2"
     # 16 color space
     put_template 0  $color00
     put_template 1  $color01
@@ -72,6 +77,7 @@ function update-colors-from-x --description 'Update the colors from x'
     put_template 20 $color20
     put_template 21 $color21
 
+    echo "Check3"
     # foreground / background / cursor color
     if test -n "$ITERM_SESSION_ID"
         # iTerm2 proprietary escape codes
@@ -93,6 +99,7 @@ function update-colors-from-x --description 'Update the colors from x'
         put_template_custom 12 ";7" # cursor (reverse video)
     end
 
+    echo "Check4"
     # set syntax highlighting colors
     set -U fish_color_autosuggestion (echo $color19 | sed 's/\///g')
     set -U fish_color_cancel -r

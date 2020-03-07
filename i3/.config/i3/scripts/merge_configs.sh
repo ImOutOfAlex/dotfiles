@@ -19,7 +19,5 @@ BRIGHTNESS=dark
 
 if hash base16-builder 2>/dev/null ; then
     # Load scheme
-    base16-builder -t i3 -s $COLOR_SCHEME -b $BRIGHTNESS >> $I3_CONFIG
-    sed -i 's/bar\s*{\s*/bar {\n status_command i3blocks/g' $I3_CONFIG
     base16-builder -t i3status -s $COLOR_SCHEME -b $BRIGHTNESS >> $I3_STATUS_CONFIG
 fi

@@ -3,6 +3,6 @@
 sh $HOME/.config/i3/scripts/merge_configs.sh
 
 if test -f "${HOME}/.xresources"; then
-    xrdb -merge "${HOME}/.xresources"
+    xrdb -merge -I$HOME "${HOME}/.xresources"
 fi
 

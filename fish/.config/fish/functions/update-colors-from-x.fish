@@ -88,12 +88,12 @@ function update-colors-from-x --description 'Update the colors from x'
         put_template_custom Pm (echo $color00 | sed 's/\///g') # cursor text
     else
         put_template_var 10 $colorfg
-        if [ "$BASE16_SHELL_SET_BACKGROUND" != false ]
-            put_template_var 11 $colorbg
-            if string match 'rxvt*' $TERM 1>/dev/null
-                put_template_var 708 $colorbg # internal border (rxvt)
-            end
-        end
+        # if [ "$BASE16_SHELL_SET_BACKGROUND" != false ]
+        #     put_template_var 11 $colorbg
+        #     if string match 'rxvt*' $TERM 1>/dev/null
+        #         put_template_var 708 $colorbg # internal border (rxvt)
+        #     end
+        # end
         put_template_custom 12 ";7" # cursor (reverse video)
     end
 

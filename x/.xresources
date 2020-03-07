@@ -1,3 +1,5 @@
+#define background_opacity 80
+
 #include ".xcolorscheme"
 
 #define fonts           xft:Fira Code:size=12, \
@@ -17,7 +19,6 @@ URxvt.loginShell:           true
 URxvt.saveLines:            5000
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
-URxvt.background:           [80]#002b36
 
 ! Fonts
 URxvt.allow_bold:           false
@@ -37,7 +38,6 @@ URxvt.urlLauncher:          firefox
 
 ! Cursor
 URxvt.cursorBlink:          true
-URxvt.cursorColor:          #657b83
 URxvt.cursorUnderline:      false
 
 ! Pointer

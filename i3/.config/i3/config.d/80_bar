@@ -1,24 +1,21 @@
 # Colors loaded from .Xresources
-# i3 config template
-# Base16 Atelier Sulphurpool by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/sulphurpool)
-# template by Matt Parnell, @parnmatt
 
-set_from_resource $base00 color0 #202746
-set_from_resource $base01 color1 #293256
-set_from_resource $base02 color2 #5e6687
-set_from_resource $base03 color3 #6b7394
-set_from_resource $base04 color4 #898ea4
-set_from_resource $base05 color5 #979db4
-set_from_resource $base06 color6 #dfe2f1
-set_from_resource $base07 color7 #f5f7ff
-set_from_resource $base08 color8 #c94922
-set_from_resource $base09 color9 #c76b29
-set_from_resource $base0A color10 #c08b30
-set_from_resource $base0B color11 #ac9739
-set_from_resource $base0C color12 #22a2c9
-set_from_resource $base0D color13 #3d8fd1
-set_from_resource $base0E color14 #6679cc
-set_from_resource $base0F color15 #9c637a
+set_from_resource $base00 color0 #1d1f21
+set_from_resource $base01 color10 #282a2e
+set_from_resource $base02 color12 #373b41
+set_from_resource $base03 color8 #969896
+set_from_resource $base04 color12 #b4b7b4
+set_from_resource $base05 color7 #c5c8c6
+set_from_resource $base06 color13 #e0e0e0
+set_from_resource $base07 color15 #ffffff
+set_from_resource $base08 color1 #cc6666
+set_from_resource $base09 color9 #de935f
+set_from_resource $base0A color3 #f0c674
+set_from_resource $base0B color2 #b5bd68
+set_from_resource $base0C color6 #8abeb7
+set_from_resource $base0D color4 #81a2be
+set_from_resource $base0E color5 #b294bb
+set_from_resource $base0F color14 #a3685a
 
 client.focused $base0D $base0D $base00 $base01
 client.focused_inactive $base02 $base02 $base03 $base01
@@ -30,12 +27,16 @@ client.urgent $base02 $base08 $base07 $base08
 bar {
     status_command i3blocks
     colors {
-        separator $base03
-        background $base01
-        statusline $base05
-        focused_workspace $base0C $base0D $base00
-        active_workspace $base02 $base02 $base07
-        inactive_workspace $base01 $base01 $base03
-        urgent_workspace $base08 $base08 $base07
+
+        background $base00
+        separator  $base01
+        statusline $base04
+
+        # State             Border  BG      Text
+        focused_workspace   $base05 $base0D $base00
+        active_workspace    $base05 $base03 $base00
+        inactive_workspace  $base03 $base01 $base05
+        urgent_workspace    $base08 $base08 $base00
+        binding_mode        $base00 $base0A $base00
     }
 }

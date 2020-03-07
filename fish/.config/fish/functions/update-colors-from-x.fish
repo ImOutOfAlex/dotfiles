@@ -75,13 +75,13 @@ function update-colors-from-x --description 'Update the colors from x'
     # foreground / background / cursor color
     if test -n "$ITERM_SESSION_ID"
         # iTerm2 proprietary escape codes
-        put_template_custom Pg $color01 # foreground
-        put_template_custom Ph $color00 # background
-        put_template_custom Pi $color01 # bold color
-        put_template_custom Pj $color19 # selection color
-        put_template_custom Pk $color01 # selected text color
-        put_template_custom Pl $color01 # cursor
-        put_template_custom Pm $color00 # cursor text
+        put_template_custom Pg (echo $color01 | sed 's/\///g') # foreground
+        put_template_custom Ph (echo $color00 | sed 's/\///g') # background
+        put_template_custom Pi (echo $color01 | sed 's/\///g') # bold color
+        put_template_custom Pj (echo $color19 | sed 's/\///g') # selection color
+        put_template_custom Pk (echo $color01 | sed 's/\///g') # selected text color
+        put_template_custom Pl (echo $color01 | sed 's/\///g') # cursor
+        put_template_custom Pm (echo $color00 | sed 's/\///g') # cursor text
     else
         put_template_var 10 $colorfg
         if [ "$BASE16_SHELL_SET_BACKGROUND" != false ]
@@ -94,10 +94,10 @@ function update-colors-from-x --description 'Update the colors from x'
     end
 
     # set syntax highlighting colors
-    set -U fish_color_autosuggestion $color19
+    set -U fish_color_autosuggestion (echo $color19 | sed 's/\///g')
     set -U fish_color_cancel -r
     set -U fish_color_command green #white
-    set -U fish_color_comment $color19
+    set -U fish_color_comment (echo $color19 | sed 's/\///g')
     set -U fish_color_cwd green
     set -U fish_color_cwd_root red
     set -U fish_color_end brblack #blue
@@ -108,11 +108,11 @@ function update-colors-from-x --description 'Update the colors from x'
     set -U fish_color_match --background=brblue
     set -U fish_color_normal normal
     set -U fish_color_operator blue #green
-    set -U fish_color_param 7d7a68
+    set -U fish_color_param (echo $color20 | sed 's/\///g')
     set -U fish_color_quote yellow #brblack
     set -U fish_color_redirection cyan
-    set -U fish_color_search_match bryellow --background=$color19
-    set -U fish_color_selection white --bold --background=$color19
+    set -U fish_color_search_match bryellow --background=(echo $color19 | sed 's/\///g')
+    set -U fish_color_selection white --bold --background=(echo $color19 | sed 's/\///g')
     set -U fish_color_status red
     set -U fish_color_user brgreen
     set -U fish_color_valid_path --underline

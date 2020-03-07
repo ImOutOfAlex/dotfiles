@@ -37,42 +37,24 @@ set number list
 set lcs=trail:•,extends:→,precedes:← sbr=↪
 
 " Colors
-function! g:GetColorFromX(color)
-    return system("xrdb -query | grep $a:color: | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//' | sed -e 's/\(.*\)/\U\1/g'")
-endfunction
+let s:queried = split(system("xrdb -query | grep -Eo 'color[0-9]+:.*' | sort | awk '{print $NF}'"), '\n')
 
-let s:gui00        = g:GetColorFromX("color0")
-let s:gui01        = g:GetColorFromX("color1")
-let s:gui02        = g:GetColorFromX("color2")
-let s:gui03        = g:GetColorFromX("color3")
-let s:gui04        = g:GetColorFromX("color4")
-let s:gui05        = g:GetColorFromX("color5")
-let s:gui06        = g:GetColorFromX("color6")
-let s:gui07        = g:GetColorFromX("color7")
-let s:gui08        = g:GetColorFromX("color8")
-let s:gui09        = g:GetColorFromX("color9")
-let s:gui0A        = g:GetColorFromX("color10")
-let s:gui0B        = g:GetColorFromX("color11")
-let s:gui0C        = g:GetColorFromX("color12")
-let s:gui0D        = g:GetColorFromX("color13")
-let s:gui0E        = g:GetColorFromX("color14")
-let s:gui0F        = g:GetColorFromX("color15")
-let g:base16_gui00 = s:gui00
-let g:base16_gui01 = s:gui01
-let g:base16_gui02 = s:gui02
-let g:base16_gui03 = s:gui03
-let g:base16_gui04 = s:gui04
-let g:base16_gui05 = s:gui05
-let g:base16_gui06 = s:gui06
-let g:base16_gui07 = s:gui07
-let g:base16_gui08 = s:gui08
-let g:base16_gui09 = s:gui09
-let g:base16_gui0A = s:gui0A
-let g:base16_gui0B = s:gui0B
-let g:base16_gui0C = s:gui0C
-let g:base16_gui0D = s:gui0D
-let g:base16_gui0E = s:gui0E
-let g:base16_gui0F = s:gui0F
+let s:gui00        = s:queried[0]
+let s:gui01        = s:queried[1]
+let s:gui02        = s:queried[2]
+let s:gui03        = s:queried[3]
+let s:gui04        = s:queried[4]
+let s:gui05        = s:queried[5]
+let s:gui06        = s:queried[6]
+let s:gui07        = s:queried[7]
+let s:gui08        = s:queried[8]
+let s:gui09        = s:queried[9]
+let s:gui0A        = s:queried[10]
+let s:gui0B        = s:queried[11]
+let s:gui0C        = s:queried[12]
+let s:gui0D        = s:queried[13]
+let s:gui0E        = s:queried[14]
+let s:gui0F        = s:queried[15]
 
 " Terminal color definitions
 let s:cterm00        = "00"
@@ -172,6 +154,9 @@ endif
 hi clear
 syntax reset
 
+set termguicolors
+let g:colors_name = "xresources"
+
 " Highlighting function
 " Optional variables are attributes and guisp
 function! g:Base16hi(group, guifg, guibg, ctermfg, ctermbg, ...)
@@ -179,10 +164,10 @@ function! g:Base16hi(group, guifg, guibg, ctermfg, ctermbg, ...)
   let l:guisp = get(a:, 2, "")
 
   if a:guifg != ""
-    exec "hi " . a:group . " guifg=#" . a:guifg
+    exec "hi " . a:group . " guifg=" . a:guifg
   endif
   if a:guibg != ""
-    exec "hi " . a:group . " guibg=#" . a:guibg
+    exec "hi ". a:group . " guibg=" . a:guibg
   endif
   if a:ctermfg != ""
     exec "hi " . a:group . " ctermfg=" . a:ctermfg
@@ -194,7 +179,7 @@ function! g:Base16hi(group, guifg, guibg, ctermfg, ctermbg, ...)
     exec "hi " . a:group . " gui=" . l:attr . " cterm=" . l:attr
   endif
   if l:guisp != ""
-    exec "hi " . a:group . " guisp=#" . l:guisp
+    exec "hi " . a:group . " guisp=" . l:guisp
   endif
 endfunction
 
@@ -436,7 +421,6 @@ delf <sid>hi
 " Remove color variables
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F
 unlet s:cterm00 s:cterm01 s:cterm02 s:cterm03 s:cterm04 s:cterm05 s:cterm06 s:cterm07 s:cterm08 s:cterm09 s:cterm0A s:cterm0B s:cterm0C s:cterm0D s:cterm0E s:cterm0F
-
 
 
 

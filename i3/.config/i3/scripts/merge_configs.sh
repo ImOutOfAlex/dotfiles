@@ -14,10 +14,3 @@ if [ -d $I3_CONFIG_DIR ]; then
     cat $I3_STATUS_CONFIG_DIR/* >> $I3_STATUS_CONFIG
 fi
 
-COLOR_SCHEME=atelier-Sulphurpool
-BRIGHTNESS=dark
-
-if hash base16-builder 2>/dev/null ; then
-    # Load scheme
-    base16-builder -t i3status -s $COLOR_SCHEME -b $BRIGHTNESS >> $I3_STATUS_CONFIG
-fi

@@ -5,7 +5,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'PotatoesMaster/i3-vim-syntax'
@@ -36,10 +35,6 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set number list
 " set lcs=tab:>-,eol:¬,nbsp:~,trail:•,extends:→,precedes:← sbr=↪
 set lcs=trail:•,extends:→,precedes:← sbr=↪
-let g:solarized_termtrans=1
-let g:solarized_visibility="low"
-set background=dark
-colorscheme solarized
 
 
 " LSP Config

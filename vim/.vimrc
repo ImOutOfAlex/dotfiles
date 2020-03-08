@@ -37,11 +37,10 @@ set number list
 set lcs=trail:•,extends:→,precedes:← sbr=↪
 
 " Colors
+let base16colorspace=256
 let s:query = "xrdb -query | grep -Eo 'color[0-9]+:.*' | sed -e 's/color\([0-9]\):/color0\1:/g' | sort | awk '{print $NF}' | sed 's/[a-z]/\\U&/g'"
 
 let s:queried = split(system(s:query), '\n')
-
-echom s:queried
 
 let s:gui00        = s:queried[0]
 let s:gui01        = s:queried[10]
@@ -158,7 +157,7 @@ endif
 hi clear
 syntax reset
 
-set termguicolors
+" set termguicolors
 let g:colors_name = "xresources"
 
 " Highlighting function
@@ -193,7 +192,7 @@ fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
 endfun
 
 " Vim editor colors
-call <sid>hi("Normal",        s:gui05, s:gui00, s:cterm05, s:cterm00, "", "")
+call <sid>hi("Normal",        s:gui05, "NONE", s:cterm05, "NONE", "", "")
 call <sid>hi("Bold",          "", "", "", "", "bold", "")
 call <sid>hi("Debug",         s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Directory",     s:gui0D, "", s:cterm0D, "", "", "")

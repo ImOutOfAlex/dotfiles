@@ -3,29 +3,30 @@ function get-color
 end
 
 function update-colors-from-x --description 'Update the colors from x'
-    set color00 (get-color color0)
-    set color01 (get-color color1)
-    set color02 (get-color color2)
-    set color03 (get-color color3)
-    set color04 (get-color color4)
-    set color05 (get-color color5)
-    set color06 (get-color color6)
-    set color07 (get-color color7)
-    set color08 (get-color color8)
+    set colors (xrdb -query | grep -Eo 'color[0-9]+:.*' | sed -e 's/color\([0-9]\):/color0\1:/g' | sort | awk '{print $NF}' | sed 's/#//g;s/../&\//g;s/\/$//' | sed -e 's/\(.*\)/\U\1/g')
+    set color00 $colors[1]
+    set color01 $colors[2]
+    set color02 $colors[3]
+    set color03 $colors[4]
+    set color04 $colors[5]
+    set color05 $colors[6]
+    set color06 $colors[7]
+    set color07 $colors[8]
+    set color08 $colors[9]
     set color09 $color01;
     set color10 $color02;
     set color11 $color03;
     set color12 $color04;
     set color13 $color05;
     set color14 $color06;
-    set color15 (get-color color15)
+    set color15 $colors[16]
 
-    set color16 (get-color color9)
-    set color17 (get-color color14)
-    set color18 (get-color color10)
-    set color19 (get-color color11)
-    set color20 (get-color color12)
-    set color21 (get-color color13)
+    set color16 $colors[10]
+    set color17 $colors[15]
+    set color18 $colors[11]
+    set color19 $colors[12]
+    set color20 $colors[13]
+    set color21 $colors[14]
 
     set colorfg $color07;
     set colorbg $color00;

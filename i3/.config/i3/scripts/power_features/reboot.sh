@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-reboot now
+pkexec reboot now

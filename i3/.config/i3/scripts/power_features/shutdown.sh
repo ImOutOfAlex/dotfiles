@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-shutdown now
+pkexec shutdown now

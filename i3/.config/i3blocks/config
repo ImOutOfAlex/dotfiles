@@ -1,0 +1,12 @@
+[public-ip]
+command=wget -qO - icanhazip.com
+interval=once
+
+#[catbutton]
+#command=feh --bg-center (wget -qO- http://aws.random.cat/meow | jq -r .file)
+#label=MEOW
+#interval=0
+
+[time]
+command=date +"%D %R:%S %a"
+interval=1

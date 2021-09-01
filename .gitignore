@@ -1,5 +1,8 @@
 /themes/
-/i3/config
+/x/.xcolorscheme
+/i3/.config/i3/config
+/i3/.config/i3/status
+/fish/.config/fish/fish_variables
 
 __pycache__/
 *.py[cod]

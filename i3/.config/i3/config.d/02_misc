@@ -1,0 +1,10 @@
+exec /usr/bin/compton
+exec /usr/bin/flameshot
+exec /usr/bin/clipit
+exec conky -x 0
+exec conky -x 1
+exec conky -x 2
+exec_always $HOME/.fehbg
+
+font pango:monospace 8
+new_window none

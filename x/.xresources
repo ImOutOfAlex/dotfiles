@@ -2,7 +2,7 @@
 
 #include ".xcolorscheme"
 
-#define fonts           xft:Fira Code:size=12, \
+#define fonts           xft:FiraCode Nerd Font:size=12, \
                         xft:Monospace:size=12
 
 Xft.dpi:                    96

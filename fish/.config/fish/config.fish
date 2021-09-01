@@ -19,3 +19,12 @@ if status --is-login
     end
 end
 
+
+# Created by `userpath` on 2020-04-11 03:30:37
+set PATH $PATH /home/alex/.local/bin
+
+if not command -sq starship
+    sh -c (curl -fsSL https://starship.rs/install.sh)
+end
+
+starship init fish | source

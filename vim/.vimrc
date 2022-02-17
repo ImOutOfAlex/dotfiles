@@ -1,3 +1,5 @@
+set shell=/bin/sh
+
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -26,8 +28,8 @@ Plug 'svermeulen/vim-cutlass'
 Plug 'svermeulen/vim-yoink'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
-
 
 " Styling
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
@@ -38,7 +40,7 @@ set lcs=trail:•,extends:→,precedes:← sbr=↪
 
 " Colors
 let base16colorspace=256
-let s:query = "xrdb -query | grep -Eo 'color[0-9]+:.*' | sed -e 's/color\([0-9]\):/color0\1:/g' | sort | awk '{print $NF}' | sed 's/[a-z]/\\U&/g'"
+let s:query = "xrdb -query | grep -Eo 'color[0-9]+:.*' | sed -e 's/color\([0-9]\):/color0\1:/g' | sort | awk '{print $NF}' | tr [a-z] [A-Z]"
 
 let s:queried = split(system(s:query), '\n')
 
@@ -437,17 +439,17 @@ unlet s:cterm00 s:cterm01 s:cterm02 s:cterm03 s:cterm04 s:cterm05 s:cterm06 s:ct
 
 
 " LSP Config
-if executable('pyls')
-    " pip install python-language-server
+if executable('pylsp')
+    let output=system("pip install python-language-server")
     au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
+        \ 'name': 'pylsp',
+        \ 'cmd': {server_info->['pylsp']},
         \ 'whitelist': ['python'],
         \ })
 endif
 
 if executable('racket')
-    " raco install racket-language-server
+    let output=system('raco install racket-language-server')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'racket-language-server',
         \ 'cmd': ['racket', '-l', 'racket-language-server'],

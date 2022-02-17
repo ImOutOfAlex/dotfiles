@@ -1,4 +1,0 @@
-# if not command -sq starship:
-#     sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-
-execx($(starship init xonsh))

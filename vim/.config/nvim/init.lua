@@ -1,17 +1,69 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = fn.system({
+    'git',
+    'clone',
+    '--depth',
+    '1',
+    'https://github.com/wbthomason/packer.nvim',
+    install_path})
 end
 require('packer').startup(function(use)   
   use 'wbthomason/packer.nvim'
-  use 'airblade/vim-gitgutter'
-  use 'vim-airline/vim-airline'
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function ()
+      require('gitsigns').setup {
+        signs = {
+          add = {
+            hl = 'GitSignsAdd',
+            text = '+',
+            numhl='GitSignsAddNr',
+            linehl='GitSignsAddLn',
+          },
+          change = {
+            hl = 'GitSignsChange',
+            text = '~',
+            numhl='GitSignsChangeNr',
+            linehl='GitSignsChangeLn',
+          },
+          delete = {
+            hl = 'GitSignsDelete',
+            text = '_',
+            numhl='GitSignsDeleteNr',
+            linehl='GitSignsDeleteLn',
+          },
+          topdelete = {
+            hl = 'GitSignsDelete',
+            text = '‾',
+            numhl='GitSignsDeleteNr',
+            linehl='GitSignsDeleteLn',
+          },
+          changedelete = {
+            hl = 'GitSignsChange',
+            text = '~',
+            numhl='GitSignsChangeNr',
+            linehl='GitSignsChangeLn',
+          },
+        },
+      }
+    end
+  }
+  use {
+    'windwp/windline.nvim',
+    config = function ()
+      require('wlsample.wind')
+
+    end
+  }
   use 'neovim/nvim-lspconfig'
   use 'kabouzeid/nvim-lspinstall'
   use 'w0rp/ale'
   use 'jiangmiao/auto-pairs'
-  use 'tpope/vim-sensible'
   use 'tpope/vim-vinegar'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-dispatch'
@@ -77,6 +129,8 @@ require('packer').startup(function(use)
   if packer_bootstrap then
     require('packer').sync()
   end
+
+  -- My custom configuration
   vim.opt.listchars = {
     tab = ">-",
     eol = "¬",

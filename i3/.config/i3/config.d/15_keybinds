@@ -2,7 +2,7 @@
 floating_modifier $mod
 
 # useful shortcuts
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 bindsym $mod+i exec sensible-browser
 bindsym $mod+l exec $HOME/.config/i3/scripts/power_features/lock.sh
 bindsym $mod+Shift+f exec flameshot gui

@@ -60,7 +60,7 @@ require('packer').startup(function(use)
     end
   }
   use 'neovim/nvim-lspconfig'
-  use 'kabouzeid/nvim-lspinstall'
+  use 'williamboman/nvim-lsp-installer'
   use 'w0rp/ale'
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-vinegar'
@@ -73,22 +73,41 @@ require('packer').startup(function(use)
     config = function ()
       vim.api.nvim_set_keymap('n', '-', '<cmd>CHADopen<cr>', {})
       vim.api.nvim_set_var("chadtree_settings", {
-        ["keymap.quit"] = {'-'},
-        ["keymap.smaller"] = {'_'},
+        keymap = {
+          quit = {'-'},
+          smaller = {'_'},
+        },
       })
     end
   }
   use {
     'ms-jpq/coq_nvim',
+    requires = {
+      'ms-jpq/coq.artifacts'
+    },
     branch = 'coq',
     config = function ()
-      vim.api.nvim_set_var("coq_settings", {
+      local lsp = require "lspconfig"
+      local coq = require "coq" -- add this
+
+      -- lsp.<server>.setup(<stuff...>)
+      -- lsp.<server>.setup(coq.lsp_ensure_capabilities(<stuff...>))
+      lsp.pylsp.setup(coq.lsp_ensure_capabilities{})
+      -- lsp.sumneko_lua.setup(coq.lsp_ensure_capabilities{})
+      lsp.bashls.setup(coq.lsp_ensure_capabilities{})
+      vim.g.coq_settings = {
         display = {
           ["pum.fast_close"] = false,
           ["ghost_text.enabled"] = true,
         },
+        clients = {
+          ["tree_sitter.enabled"] = true,
+          ["lsp.enabled"] = true,
+        },
         auto_start = 'shut-up',
-      })
+      }
+      -- Remove this once I figure out how...
+      vim.cmd('COQnow -s')
     end
   }
   use 'tjdevries/colorbuddy.nvim'

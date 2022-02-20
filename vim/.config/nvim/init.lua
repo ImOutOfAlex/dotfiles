@@ -71,6 +71,13 @@ require('packer').startup(function(use)
   use {
     'ms-jpq/chadtree',
     branch = 'chad',
+    config = function ()
+      vim.api.nvim_set_keymap('n', '-', '<cmd>CHADopen<cr>', {})
+      vim.api.nvim_set_var("chadtree_settings", {
+        ["keymap.quit"] = {'-'},
+        ["keymap.smaller"] = {'_'},
+      })
+    end
   }
   use {
     'ms-jpq/coq_nvim',

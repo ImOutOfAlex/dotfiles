@@ -57,7 +57,6 @@ require('packer').startup(function(use)
     'windwp/windline.nvim',
     config = function ()
       require('wlsample.wind')
-
     end
   }
   use 'neovim/nvim-lspconfig'
@@ -83,13 +82,13 @@ require('packer').startup(function(use)
     'ms-jpq/coq_nvim',
     branch = 'coq',
     config = function ()
-      vim.g.coq_settings = {
+      vim.api.nvim_set_var("coq_settings", {
         display = {
           ["pum.fast_close"] = false,
           ["ghost_text.enabled"] = true,
         },
         auto_start = 'shut-up',
-      }
+      })
     end
   }
   use 'tjdevries/colorbuddy.nvim'

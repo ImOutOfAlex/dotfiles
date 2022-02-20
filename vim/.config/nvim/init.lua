@@ -61,12 +61,12 @@ require('packer').startup(function(use)
   }
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
-  use 'w0rp/ale'
-  use 'jiangmiao/auto-pairs'
-  use 'tpope/vim-vinegar'
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-dispatch'
-  use 'tpope/vim-repeat'
+  use 'w0rp/ale'  -- vimscript
+  use 'jiangmiao/auto-pairs'  -- vimscript
+  use 'tpope/vim-vinegar'  -- vimscript
+  use 'tpope/vim-fugitive'  -- vimscript
+  use 'tpope/vim-dispatch'  -- vimscript
+  use 'tpope/vim-repeat'  -- vimscript
   use {
     'ms-jpq/chadtree',
     branch = 'chad',
@@ -88,7 +88,7 @@ require('packer').startup(function(use)
     branch = 'coq',
     config = function ()
       local lsp = require "lspconfig"
-      local coq = require "coq" -- add this
+      local coq = require "coq"
 
       -- lsp.<server>.setup(<stuff...>)
       -- lsp.<server>.setup(coq.lsp_ensure_capabilities(<stuff...>))
@@ -99,6 +99,7 @@ require('packer').startup(function(use)
         display = {
           ["pum.fast_close"] = false,
           ["ghost_text.enabled"] = true,
+          ["preview.border"] = 'shadow',
         },
         clients = {
           ["tree_sitter.enabled"] = true,
@@ -110,7 +111,6 @@ require('packer').startup(function(use)
       vim.cmd('COQnow -s')
     end
   }
-  use 'tjdevries/colorbuddy.nvim'
   use {
     'b3nj5m1n/kommentary',
     config = function ()
@@ -125,9 +125,16 @@ require('packer').startup(function(use)
       vim.api.nvim_set_keymap('n', '<C-_>', 'gccj', {})
     end
   }
-  use 'svermeulen/vim-cutlass'
   use {
-    'svermeulen/vim-yoink',
+    "gbprod/cutlass.nvim",
+    config = function()
+      require("cutlass").setup({
+          cut_key = "m"
+      })
+    end
+  }
+  use {
+    'svermeulen/vim-yoink',  -- vimscript
     setup = function ()
       vim.g.yoinkIncludeDeleteOperations = 1
     end
@@ -137,17 +144,17 @@ require('packer').startup(function(use)
     run = ':TSUpdate',
     config = function ()
       require'nvim-treesitter.configs'.setup {
-    ensure_installed = "maintained",
-    highlight = {
-      enable = true,
-    },
-    indent = {
-      enable = true,
-    },
+        ensure_installed = "maintained",
+        highlight = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
       }
     end
   }
-  use 'junegunn/fzf.vim'
+  use 'junegunn/fzf.vim'  -- vimscript
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

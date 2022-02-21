@@ -8,4 +8,4 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-./neovim/.config/nvim/plugin
+neovim/.config/nvim/plugin

@@ -9,7 +9,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     'https://github.com/wbthomason/packer.nvim',
     install_path})
 end
-require('packer').startup(function(use)   
+require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use {
     'lewis6991/gitsigns.nvim',
@@ -60,8 +60,16 @@ require('packer').startup(function(use)
     end
   }
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
-  use 'w0rp/ale'  -- vimscript
+  use {
+    'williamboman/nvim-lsp-installer',
+    config = function()
+      local lsp_installer = require("nvim-lsp-installer")
+      lsp_installer.on_server_ready(function(server)
+        local opts = {}
+        server:setup(opts)
+      end)
+    end
+  }
   use 'jiangmiao/auto-pairs'  -- vimscript
   use 'tpope/vim-vinegar'  -- vimscript
   use 'tpope/vim-fugitive'  -- vimscript
@@ -93,7 +101,15 @@ require('packer').startup(function(use)
       -- lsp.<server>.setup(<stuff...>)
       -- lsp.<server>.setup(coq.lsp_ensure_capabilities(<stuff...>))
       lsp.pylsp.setup(coq.lsp_ensure_capabilities{})
-      -- lsp.sumneko_lua.setup(coq.lsp_ensure_capabilities{})
+      lsp.sumneko_lua.setup(coq.lsp_ensure_capabilities {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { 'vim' }
+            }
+          },
+        },
+      })
       lsp.bashls.setup(coq.lsp_ensure_capabilities{})
       vim.g.coq_settings = {
         display = {

@@ -8,7 +8,6 @@ font:
 
 scrolling:
   history: 10000
-  multiplier: 100
   auto_scroll: true
 
 items:

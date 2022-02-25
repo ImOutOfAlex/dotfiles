@@ -1,9 +1,51 @@
+-- aliases
 local fn = vim.fn
+local api = vim.api
+local cmd = vim.cmd
 
-require("dap-install").setup({
+-- imports
+local dap = require 'dap'
+local dap_install = require 'dap-install'
+local dap_ui = require 'dapui'
+
+dap_install.setup {
   installation_path = fn.stdpath("data") .. "/dapinstall/",
-})
-require("dapui").setup({
+}
+dap_install.config(
+  'python',
+  {
+    configurations = {
+      {
+        type = 'python',
+        request = 'launch',
+        name = 'Launch file',
+        program = '${file}',
+      },
+    },
+  }
+)
+
+-- TODO: Convert this to use nvim_add_user_command once https://github.com/neovim/neovim/pull/16752 is integrated
+cmd("command Debug :lua require'dap'.continue()")
+cmd("command StepOver :lua require'dap'.step_over()")
+cmd("command StepIn :lua require'dap'.step_into()")
+cmd("command StepOut :lua require'dap'.step_out()")
+cmd("command ToggleBreakpoint :lua require'dap'.toggle_breakpoint()")
+cmd("command SetConditionalBreakpoint :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))")
+cmd("command SetBreakpoint :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))")
+cmd("command Repl :lua require'dap'.repl.open()")
+cmd("command RunLast :lua require'dap'.run_last()")
+
+api.nvim_set_keymap('n', '<F5>', ":Debug<CR>", {})
+api.nvim_set_keymap('n', '<F10>', ":StepOver<CR>", {})
+api.nvim_set_keymap('n', '<F11>', ":StepInto<CR>", {})
+api.nvim_set_keymap('n', '<F12>', ":StepOut<CR>", {})
+api.nvim_set_keymap('n', '<leader>b', ":ToggleBreakpoint<CR>", {})
+api.nvim_set_keymap('n', '<leader>B', ":SetConditionalBreakpoint<CR>", {})
+api.nvim_set_keymap('n', '<leader>lp', ":SetBreakpoint<CR>", {})
+api.nvim_set_keymap('n', '<leader>dr', ":Repl<CR>", {})
+api.nvim_set_keymap('n', '<leader>dl', ":RunLast<CR>", {})
+dap_ui.setup {
   icons = { expanded = "▾", collapsed = "▸" },
   sidebar = {
     -- You can change the order of elements in the sidebar
@@ -34,4 +76,15 @@ require("dapui").setup({
     },
   },
   windows = { indent = 1 },
-})
+}
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dap_ui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dap_ui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dap_ui.close()
+end
+api.nvim_set_keymap('n', '<leader>dd', ":lua require'dapui'.toggle()<CR>", {})
+

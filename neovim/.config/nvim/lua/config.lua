@@ -62,6 +62,7 @@ require('gitsigns').setup {
 }
 
 -- My custom configuration
+g.mapleader = ","
 opt.listchars = {
   tab = ">-",
   eol = "¬",

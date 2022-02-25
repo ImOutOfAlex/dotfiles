@@ -1,8 +1,14 @@
+-- Aliases
+local g = vim.g
+local wo = vim.wo
+local opt = vim.opt
+local api = vim.api
+
 -- Cutlass and Yoink
 require("cutlass").setup({
   cut_key = "m"
 })
-vim.g.yoinkIncludeDeleteOperations = 1
+g.yoinkIncludeDeleteOperations = 1
 
 -- Kommentary
 local kommentary = require('kommentary.config')
@@ -12,9 +18,9 @@ kommentary.configure_language("default", {
   ignore_whitespace = true,
 })
 kommentary.use_extended_mappings()
-vim.api.nvim_set_keymap('i', '<C-_>', '<esc>gccji', {})
-vim.api.nvim_set_keymap('v', '<C-_>', 'gc<esc>', {})
-vim.api.nvim_set_keymap('n', '<C-_>', 'gccj', {})
+api.nvim_set_keymap('i', '<C-_>', '<esc>gccji', {})
+api.nvim_set_keymap('v', '<C-_>', 'gc<esc>', {})
+api.nvim_set_keymap('n', '<C-_>', 'gccj', {})
 
 -- Windline
 require('wlsample.wind')
@@ -56,7 +62,7 @@ require('gitsigns').setup {
 }
 
 -- My custom configuration
-vim.opt.listchars = {
+opt.listchars = {
   tab = ">-",
   eol = "¬",
   nbsp = "~",
@@ -64,11 +70,11 @@ vim.opt.listchars = {
   extends = "→",
   precedes = "←",
 }
-vim.wo.list = true
-vim.opt.number = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
-vim.opt.completeopt = {'menuone', 'noinsert', 'noselect', 'preview'}
-vim.opt.mouse = 'a'
+wo.list = true
+opt.number = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.expandtab = true
+opt.completeopt = {'menuone', 'noinsert', 'noselect', 'preview'}
+opt.mouse = 'a'

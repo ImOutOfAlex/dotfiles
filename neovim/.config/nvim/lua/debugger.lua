@@ -1,6 +1,7 @@
--- DAP
+local fn = vim.fn
+
 require("dap-install").setup({
-  installation_path = vim.fn.stdpath("data") .. "/dapinstall/",
+  installation_path = fn.stdpath("data") .. "/dapinstall/",
 })
 require("dapui").setup({
   icons = { expanded = "▾", collapsed = "▸" },

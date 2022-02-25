@@ -1,3 +1,5 @@
+local g = vim.g
+local cmd = vim.cmd
 local lsp_installer = require "nvim-lsp-installer"
 local lsp = require "lspconfig"
 local coq = require "coq"
@@ -19,18 +21,19 @@ end)
 
 -- lsp.<server>.setup(<stuff...>)
 -- lsp.<server>.setup(coq.lsp_ensure_capabilities(<stuff...>))
-lsp.pylsp.setup(coq.lsp_ensure_capabilities{})
-lsp.sumneko_lua.setup(coq.lsp_ensure_capabilities {
+lsp.sumneko_lua.setup {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { 'vim' }
-      }
+        globals = { 'vim' },
+      },
     },
   },
-})
+}
+lsp.sumneko_lua.setup(coq.lsp_ensure_capabilities{})
+lsp.pylsp.setup(coq.lsp_ensure_capabilities{})
 lsp.bashls.setup(coq.lsp_ensure_capabilities{})
-vim.g.coq_settings = {
+g.coq_settings = {
   display = {
     ["pum.fast_close"] = false,
     ["ghost_text.enabled"] = true,
@@ -43,5 +46,5 @@ vim.g.coq_settings = {
   auto_start = 'shut-up',
 }
 -- Remove this once I figure out how...
-vim.cmd('COQnow -s')
+cmd('COQnow -s')
 

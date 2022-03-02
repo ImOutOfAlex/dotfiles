@@ -18,6 +18,10 @@ require('packer').startup(function(use)
   use 'windwp/windline.nvim'
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
   use 'jiangmiao/auto-pairs'  -- vimscript
   use 'tpope/vim-vinegar'  -- vimscript
   use 'tpope/vim-repeat'  -- vimscript

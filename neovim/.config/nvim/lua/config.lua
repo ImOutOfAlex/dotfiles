@@ -3,12 +3,15 @@ local g = vim.g
 local wo = vim.wo
 local opt = vim.opt
 local api = vim.api
+local cmd = vim.cmd
 
 -- Cutlass and Yoink
 require("cutlass").setup({
   cut_key = "m"
 })
 g.yoinkIncludeDeleteOperations = 1
+g.yoinkSyncSystemClipboardOnFocus = 1
+cmd('set clipboard=unnamed')
 
 -- Kommentary
 local kommentary = require('kommentary.config')
@@ -21,6 +24,10 @@ kommentary.use_extended_mappings()
 api.nvim_set_keymap('i', '<C-_>', '<esc>gccji', {})
 api.nvim_set_keymap('v', '<C-_>', 'gc<esc>', {})
 api.nvim_set_keymap('n', '<C-_>', 'gccj', {})
+
+-- Trouble
+require('trouble').setup {
+}
 
 -- Windline
 require('wlsample.wind')

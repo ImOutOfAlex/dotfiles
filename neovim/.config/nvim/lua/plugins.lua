@@ -20,7 +20,6 @@ require('packer').startup(function(use)
   use 'williamboman/nvim-lsp-installer'
   use 'jiangmiao/auto-pairs'  -- vimscript
   use 'tpope/vim-vinegar'  -- vimscript
-  use 'tpope/vim-fugitive'  -- vimscript
   use 'tpope/vim-repeat'  -- vimscript
   use {
     "rcarriga/nvim-dap-ui",
@@ -32,7 +31,6 @@ require('packer').startup(function(use)
   }
   use {
     'ms-jpq/chadtree',
-    run = ':CHADdeps',
     branch = 'chad',
   }
   use {
@@ -40,7 +38,6 @@ require('packer').startup(function(use)
     requires = {
       'ms-jpq/coq.artifacts'
     },
-    run = ':COQdeps',
     branch = 'coq'
   }
   use 'b3nj5m1n/kommentary'

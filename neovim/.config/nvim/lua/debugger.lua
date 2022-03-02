@@ -21,6 +21,12 @@ dap_install.config(
         name = 'Launch file',
         program = '${file}',
       },
+      {
+        type = 'python',
+        request = 'launch',
+        name = 'Test File',
+        program = '-m pytest ${file}',
+      },
     },
   }
 )
@@ -76,6 +82,12 @@ dap_ui.setup {
     },
   },
   windows = { indent = 1 },
+}
+fn.sign_define('DapStopped', {text='▸', texthl='', linehl='', numhl=''})
+fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
+dap.defaults.fallback.external_terminal = {
+  command = '/usr/bin/alacritty';
+  args = {'-e'};
 }
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dap_ui.open()

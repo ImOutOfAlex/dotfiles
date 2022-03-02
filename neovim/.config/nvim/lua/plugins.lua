@@ -22,6 +22,7 @@ require('packer').startup(function(use)
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
   }
+  use 'jackguo380/vim-lsp-cxx-highlight'
   use 'jiangmiao/auto-pairs'  -- vimscript
   use 'tpope/vim-vinegar'  -- vimscript
   use 'tpope/vim-repeat'  -- vimscript

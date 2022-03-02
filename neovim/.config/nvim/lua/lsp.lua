@@ -48,3 +48,4 @@ g.coq_settings = {
 -- Remove this once I figure out how...
 cmd('COQnow -s')
 
+g.lsp_cxx_hl_use_text_props = 1

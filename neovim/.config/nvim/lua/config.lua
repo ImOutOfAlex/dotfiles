@@ -11,7 +11,7 @@ require("cutlass").setup({
 })
 g.yoinkIncludeDeleteOperations = 1
 g.yoinkSyncSystemClipboardOnFocus = 1
-cmd('set clipboard=unnamed')
+g.clipboard = 'unnamed'
 
 -- Kommentary
 local kommentary = require('kommentary.config')

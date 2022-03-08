@@ -20,12 +20,26 @@ dap_install.config(
         request = 'launch',
         name = 'Launch file',
         program = '${file}',
+        pythonPath = 'python',
+        args = function()
+          local argument_string = fn.input('Program arguments: ')
+          return fn.split(argument_string, " ", true)
+        end,
       },
       {
         type = 'python',
         request = 'launch',
-        name = 'Test File',
-        program = '-m pytest ${file}',
+        name = 'pytest',
+        module = 'pytest',
+        pythonPath = 'python',
+        args = function()
+          local argument_string = fn.input('Program arguments: ')
+          return table.insert(
+            fn.split(argument_string, " ", true),
+            0,
+            '${file}'
+          )
+        end,
       },
     },
   }

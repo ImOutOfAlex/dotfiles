@@ -22,7 +22,6 @@ require('packer').startup(function(use)
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
   }
-  use 'jackguo380/vim-lsp-cxx-highlight'
   use 'jiangmiao/auto-pairs'  -- vimscript
   use 'tpope/vim-vinegar'  -- vimscript
   use 'tpope/vim-repeat'  -- vimscript
@@ -35,8 +34,9 @@ require('packer').startup(function(use)
     requires = { 'jbyuki/one-small-step-for-vimkind' }
   }
   use {
-    'ms-jpq/chadtree',
-    branch = 'chad',
+    'rcarriga/vim-ultest',
+    requires = 'vim-test/vim-test',
+    run = ':UpdateRemotePlugins'
   }
   use {
     'ms-jpq/coq_nvim',
@@ -44,6 +44,14 @@ require('packer').startup(function(use)
       'ms-jpq/coq.artifacts'
     },
     branch = 'coq'
+  }
+  use {
+    'ms-jpq/chadtree',
+    branch = 'chad',
+  }
+  use {
+    'romgrk/barbar.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
   use 'b3nj5m1n/kommentary'
   use 'gbprod/cutlass.nvim'

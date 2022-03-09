@@ -32,13 +32,10 @@ dap_install.config(
         name = 'pytest',
         module = 'pytest',
         pythonPath = 'python',
+        cwd = '${workspaceFolder}',
         args = function()
           local argument_string = fn.input('Program arguments: ')
-          return table.insert(
-            fn.split(argument_string, " ", true),
-            0,
-            '${file}'
-          )
+          return fn.split('${relativeFile}' .. argument_string, " ", true)
         end,
       },
     },

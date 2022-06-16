@@ -9,3 +9,13 @@ alias l='ls -CF'
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
+
+s() {
+  if [ ${#} -eq 0 ]; then
+    ls -alF
+  elif [ -d "${1}" ]; then
+    ls -alF "$@"
+  else
+    cat "$@"
+  fi
+}

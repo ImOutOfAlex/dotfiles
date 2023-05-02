@@ -1,6 +1,0 @@
-rofi.combi-modi:        window,drun,ssh,sys:~/.config/rofi/modis/power.sh,workspace:~/.config/rofi/modis/workspaces.sh
-rofi.run-command:       fish -c '{cmd}'
-rofi.run-list-command:  fish -c functions
-rofi.theme:             solarized
-rofi.modi:              combi
-rofi.lines:             30

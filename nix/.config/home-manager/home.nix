@@ -73,8 +73,25 @@ lsd -l $@
       enable = true;
 
       initExtra = ''
-      export PATH=$PATH:$HOME/.local/bin
-        '';
+[ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
+
+# Rust config
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+if [ -d "$PYENV_ROOT" ] ; then
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+'';
 
       shellAliases = {
         cat = "bat";

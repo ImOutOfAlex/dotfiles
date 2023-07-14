@@ -56,6 +56,41 @@ lsd -l $@
 
     starship = {
       enable = true;
+      settings = {
+        add_newline = false;
+        character = {
+          success_symbol = "[➜](bold green) ";
+          error_symbol = "[✗](bold red) ";
+        };
+        directory = {
+          truncation_length = 1;
+          fish_style_pwd_dir_length = 1;
+          read_only = " ";
+        };
+        aws = { symbol = "  "; };
+        conda = { symbol = " "; };
+        dart = { symbol = " "; };
+        docker_context = { symbol = " "; };
+        elixir = { symbol = " "; };
+        elm = { symbol = " "; };
+        git_branch = { symbol = " "; };
+        golang = { symbol = " "; };
+        hg_branch = { symbol = " "; };
+        java = { symbol = " "; };
+        julia = { symbol = " "; };
+        memory_usage = { symbol = " "; };
+        nim = { symbol = " "; };
+        nix_shell = { symbol = " "; };
+        package = { symbol = " "; };
+        perl = { symbol = " "; };
+        php = { symbol = " "; };
+        python = { symbol = " "; };
+        ruby = { symbol = " "; };
+        rust = { symbol = " "; };
+        scala = { symbol = " "; };
+        shlvl = { symbol = " "; };
+        swift = { symbol = "ﯣ "; };
+      };
     };
 
     rofi = {

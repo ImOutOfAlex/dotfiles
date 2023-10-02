@@ -8,9 +8,22 @@
     sessionVariables.LOCALES_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
 
     packages = with pkgs; [
+      # CLI Apps
       ripgrep
       dua
       jq
+      stow
+      mimic
+      dtrx
+
+      # UI Apps
+      mpv
+      libsForQt5.spectacle
+      keepassxc
+      discord
+      pavucontrol
+      steam
+      jetbrains-toolbox
     ];
     file = {
       ".local/bin/s" = {
@@ -29,24 +42,32 @@ lsd -l $@
     };
   };
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/about" = "firefox.desktop";
+      "x-scheme-handler/unknown" = "firefox.desktop";
+      "x-scheme-handler/jetbrains" = "jetbrains-toolbox.desktop";
+      "x-scheme-handler/fleet" = "jetbrains-fleet.desktop";
+      "text/plain" = "vim.desktop";
+      "inode/directory" = "ranger.desktop";
+      "application/pdf" = "firefox.desktop";
+    };
+  };
+
   services = {
-    # flameshot = {
-    #   enable = true;
-    #   settings = {
-    #     General = {
-    #       disabledTrayIcon = false;
-    #       showStartupLaunchMessage = false;
-    #       useJpgForClipboard = true;
-    #     };
-    #   };
-    # };
+    dunst = {
+      enable = true;
+    };
   };
 
   programs = {
+    home-manager.enable = true;
     bat.enable = true;
     lsd.enable = true;
-    zoxide.enable = true;
-    home-manager.enable = true;
     direnv = {
       enable = true;
       nix-direnv = {
@@ -93,14 +114,18 @@ lsd -l $@
       };
     };
 
-    rofi = {
+    git = {
       enable = true;
-      theme = "solarized";
+      lfs = {
+        enable = true;
+      };
+      userEmail = "ImOutOfAlex@her.farm";
+      userName = "Alex";
+      difftastic = {
+        enable = true;
+      };
       extraConfig = {
-        modi = "combi";
-        combi-modi = "window,drun,ssh";
-        lines = 30;
-        show-icons = true;
+        push.default = "current";
       };
     };
 
@@ -111,9 +136,14 @@ lsd -l $@
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 [ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
 
+# nix stuff
+export NIXPKGS_ALLOW_UNFREE=1
+
 # Rust config
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
+# Jetbrains
+export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -133,9 +163,45 @@ export NVM_DIR="$HOME/.nvm"
         ls = "lsd";
         ll = "lsd -al";
         l = "lsd -l";
-        vim = "nvim";
-        vi = "nvim";
-        v = "nvim";
+        v = "hx";
+        vi = "hx";
+        vim = "hx";
+      };
+    };
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+
+    helix = {
+      enable = true;
+      settings = {
+        theme = "base16_default_dark";
+      };
+    };
+
+    # UI Applications
+    firefox.enable = true;
+
+    # UI Applications that seem to work
+    alacritty = {
+      enable = true;
+      settings = {
+        font = {
+          normal.family = "JetBrainsMono Nerd Font";
+          bold.family = "JetBrainsMono Nerd Font";
+          italic.family = "JetBrainsMono Nerd Font";
+        };
+      };
+    };
+    rofi = {
+      enable = true;
+      theme = "solarized";
+      extraConfig = {
+        modi = "combi";
+        combi-modi = "window,drun,ssh";
+        lines = 30;
+        show-icons = true;
       };
     };
   };

@@ -4,9 +4,9 @@ floating_modifier $mod
 # useful shortcuts
 bindsym $mod+Shift+Return exec xterm
 bindsym $mod+Return exec alacritty
-bindsym $mod+i exec sensible-browser
+bindsym $mod+i exec firefox
 bindsym $mod+l exec $HOME/.config/i3/scripts/power_features/lock.sh
-bindsym $mod+Shift+f exec flameshot gui
+bindsym $mod+Shift+f exec spectacle -r -b
 
 # kill focused window
 bindsym $mod+Shift+q kill

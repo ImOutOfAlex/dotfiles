@@ -1,48 +1,49 @@
 { config, pkgs, ... }:
 
 let
-  is_nixos = true;
   email = "ImOutOfAlex@her.farm";
   git_user_name = "Alex";
+  user_name = "alex";
+  is_nixos = true;
+  ui_packages = with pkgs; [
+    fm
+    krita
+    element-desktop
+    jstest-gtk
+    plex-media-player
+    arandr
+    blender
+    audacity
+    prismlauncher
+    libsForQt5.spectacle
+    keepassxc
+    discord
+    pavucontrol
+    jetbrains-toolbox
+    jetbrains.webstorm
+  ];
+  cli_packages = with pkgs; [
+    lm_sensors
+    dua
+    jq
+    stow
+    mimic
+    dtrx
+    nodejs_20
+    python311
+    mlocate
+    usbutils
+    file
+    p7zip
+  ];
 in {
   home = {
-    username = "alex";
-    homeDirectory = "/home/alex";
+    username = user_name;
+    homeDirectory = "/home/" + user_name;
     stateVersion = "22.11";
     sessionVariables.LOCALES_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
 
-    packages = with pkgs; [
-      # CLI Apps
-      lm_sensors
-      dua
-      jq
-      stow
-      mimic
-      dtrx
-      nodejs_20
-      python311
-      mlocate
-      usbutils
-      file
-      p7zip
-
-      # UI Apps
-      fm
-      krita
-      element-desktop
-      jstest-gtk
-      plex-media-player
-      arandr
-      blender
-      audacity
-      prismlauncher
-      libsForQt5.spectacle
-      keepassxc
-      discord
-      pavucontrol
-      jetbrains-toolbox
-      jetbrains.webstorm
-    ];
+    packages = if is_nixos then cli_packages ++ ui_packages else cli_packages;
     file = {
       ".local/bin/s" = {
         executable = true;
@@ -227,6 +228,7 @@ export NVM_DIR="$HOME/.nvm"
     rofi = {
       enable = is_nixos;
       theme = "solarized";
+      terminal = "alacritty";
       extraConfig = {
         modi = "combi";
         combi-modi = "window,drun,ssh";

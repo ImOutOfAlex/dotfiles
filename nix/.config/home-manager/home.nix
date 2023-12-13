@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
-{
+let
+  is_nixos = true;
+  email = "ImOutOfAlex@her.farm";
+  git_user_name = "Alex";
+in {
   home = {
     username = "alex";
     homeDirectory = "/home/alex";
@@ -9,21 +13,35 @@
 
     packages = with pkgs; [
       # CLI Apps
-      ripgrep
+      lm_sensors
       dua
       jq
       stow
       mimic
       dtrx
+      nodejs_20
+      python311
+      mlocate
+      usbutils
+      file
+      p7zip
 
       # UI Apps
-      mpv
+      fm
+      krita
+      element-desktop
+      jstest-gtk
+      plex-media-player
+      arandr
+      blender
+      audacity
+      prismlauncher
       libsForQt5.spectacle
       keepassxc
       discord
       pavucontrol
-      steam
       jetbrains-toolbox
+      jetbrains.webstorm
     ];
     file = {
       ".local/bin/s" = {
@@ -43,7 +61,7 @@ lsd -l $@
   };
 
   xdg.mimeApps = {
-    enable = true;
+    enable = is_nixos;
     defaultApplications = {
       "text/html" = "firefox.desktop";
       "x-scheme-handler/http" = "firefox.desktop";
@@ -60,7 +78,7 @@ lsd -l $@
 
   services = {
     dunst = {
-      enable = true;
+      enable = is_nixos;
     };
   };
 
@@ -68,6 +86,8 @@ lsd -l $@
     home-manager.enable = true;
     bat.enable = true;
     lsd.enable = true;
+    ripgrep.enable = true;
+    jq.enable = true;
     direnv = {
       enable = true;
       nix-direnv = {
@@ -119,14 +139,20 @@ lsd -l $@
       lfs = {
         enable = true;
       };
-      userEmail = "ImOutOfAlex@her.farm";
-      userName = "Alex";
+      userEmail = email;
+      userName = git_user_name;
       difftastic = {
         enable = true;
       };
       extraConfig = {
         push.default = "current";
+        init.defaultBranch = "main";
       };
+    };
+
+    rtx = {
+      enable = true;
+      enableBashIntegration = true;
     };
 
     bash = {
@@ -139,11 +165,11 @@ lsd -l $@
 # nix stuff
 export NIXPKGS_ALLOW_UNFREE=1
 
-# Rust config
-[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-
 # Jetbrains
 export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
+
+# Rust config
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -168,6 +194,7 @@ export NVM_DIR="$HOME/.nvm"
         vim = "hx";
       };
     };
+
     fzf = {
       enable = true;
       enableBashIntegration = true;
@@ -180,12 +207,14 @@ export NVM_DIR="$HOME/.nvm"
       };
     };
 
-    # UI Applications
-    firefox.enable = true;
+    firefox.enable = is_nixos;
 
-    # UI Applications that seem to work
+    mpv = {
+      enable = is_nixos;
+    };
+    
     alacritty = {
-      enable = true;
+      enable = is_nixos;
       settings = {
         font = {
           normal.family = "JetBrainsMono Nerd Font";
@@ -194,8 +223,9 @@ export NVM_DIR="$HOME/.nvm"
         };
       };
     };
+
     rofi = {
-      enable = true;
+      enable = is_nixos;
       theme = "solarized";
       extraConfig = {
         modi = "combi";

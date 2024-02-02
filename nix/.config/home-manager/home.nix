@@ -21,6 +21,13 @@ let
     pavucontrol
     jetbrains-toolbox
     jetbrains.webstorm
+    sweet
+    dconf
+    sxiv
+    dolphin-emu
+    qjoypad
+    # r2modman
+    xivlauncher
   ];
   cli_packages = with pkgs; [
     lm_sensors
@@ -28,19 +35,23 @@ let
     jq
     stow
     mimic
-    dtrx
     nodejs_20
     python311
     mlocate
     usbutils
     file
     p7zip
+    unzip
+    unrar
+    ranger
+    dtrx
+    openssl
   ];
 in {
   home = {
     username = user_name;
     homeDirectory = "/home/" + user_name;
-    stateVersion = "22.11";
+    stateVersion = "23.11";
     sessionVariables.LOCALES_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
 
     packages = if is_nixos then cli_packages ++ ui_packages else cli_packages;
@@ -59,6 +70,7 @@ lsd -l $@
           '';
       };
     };
+    enableNixpkgsReleaseCheck = false;
   };
 
   xdg.mimeApps = {
@@ -71,8 +83,8 @@ lsd -l $@
       "x-scheme-handler/unknown" = "firefox.desktop";
       "x-scheme-handler/jetbrains" = "jetbrains-toolbox.desktop";
       "x-scheme-handler/fleet" = "jetbrains-fleet.desktop";
-      "text/plain" = "vim.desktop";
-      "inode/directory" = "ranger.desktop";
+      "text/plain" = "helix.desktop";
+      # "inode/directory" = "joshuto.desktop";  # TODO: Fix with GUI app instead.
       "application/pdf" = "firefox.desktop";
     };
   };
@@ -80,6 +92,14 @@ lsd -l $@
   services = {
     dunst = {
       enable = is_nixos;
+    };
+  };
+
+  gtk = {
+    enable = is_nixos;
+    theme = {
+      name = "Sweet-Dark";
+      package = pkgs.sweet;
     };
   };
 
@@ -149,6 +169,9 @@ lsd -l $@
         push.default = "current";
         init.defaultBranch = "main";
       };
+      ignores = [
+        ".idea"
+      ];
     };
 
     rtx = {
@@ -193,6 +216,8 @@ export NVM_DIR="$HOME/.nvm"
         v = "hx";
         vi = "hx";
         vim = "hx";
+        r = "ranger";
+        dtrx = "dtrx --one=inside";
       };
     };
 
@@ -203,6 +228,7 @@ export NVM_DIR="$HOME/.nvm"
 
     helix = {
       enable = true;
+      defaultEditor = true;
       settings = {
         theme = "base16_default_dark";
       };

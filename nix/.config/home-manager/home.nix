@@ -3,7 +3,7 @@
 let
   email = "ImOutOfAlex@her.farm";
   git_user_name = "Alex";
-  user_name = "alex";
+  username = "alex";
   is_nixos = true;
   ui_packages = with pkgs; [
     fm
@@ -49,8 +49,8 @@ let
   ];
 in {
   home = {
-    username = user_name;
-    homeDirectory = "/home/" + user_name;
+    inherit username;
+    homeDirectory = "/home/" + username;
     stateVersion = "23.11";
     sessionVariables.LOCALES_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
 
@@ -174,7 +174,7 @@ lsd -l $@
       ];
     };
 
-    rtx = {
+    mise = {
       enable = true;
       enableBashIntegration = true;
     };

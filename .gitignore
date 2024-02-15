@@ -1,11 +1,2 @@
-/themes/
-/x/.xcolorscheme
-/i3/.config/i3/config
-/i3/.config/i3/status
-/fish/.config/fish/fish_variables
-
-__pycache__/
-*.py[cod]
-*$py.class
-
-neovim/.config/nvim/plugin
+# Nix stuff
+result

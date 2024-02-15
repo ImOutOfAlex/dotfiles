@@ -15,24 +15,24 @@ let
     krita
     # element-desktop
     jstest-gtk
-    # plex-media-player
+    plex-media-player
     arandr
     blender
     audacity
     prismlauncher
     libsForQt5.spectacle
     keepassxc
-    # discord
+    discord
     pavucontrol
-    # jetbrains-toolbox
-    # jetbrains.webstorm
+    jetbrains-toolbox
+    jetbrains.webstorm
     sweet
     dconf
-    # sxiv
+    sxiv
     dolphin-emu
     qjoypad
     # r2modman
-    # xivlauncher
+    xivlauncher
   ];
   cli_packages = with pkgs; [
     lm_sensors
@@ -177,7 +177,7 @@ lsd -l $@
       ];
     };
 
-    rtx = {
+    mise = {
       enable = true;
       enableBashIntegration = true;
     };
@@ -237,7 +237,7 @@ export NVM_DIR="$HOME/.nvm"
       };
     };
 
-    # firefox.enable = is_nixos;
+    firefox.enable = is_nixos;
 
     mpv = {
       enable = is_nixos;

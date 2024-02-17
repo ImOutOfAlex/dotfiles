@@ -1,6 +1,6 @@
 {
   homeDirectory,
-  # unstable,
+  unstable,
   pkgs,
   stateVersion,
   system,
@@ -10,29 +10,29 @@ let
   email = "ImOutOfAlex@her.farm";
   git_user_name = "Alex";
   is_nixos = true;
-  ui_packages = with pkgs; [
-    fm
-    krita
-    # element-desktop
-    jstest-gtk
-    plex-media-player
-    arandr
-    blender
-    audacity
-    prismlauncher
-    libsForQt5.spectacle
-    keepassxc
-    discord
-    pavucontrol
-    jetbrains-toolbox
-    jetbrains.webstorm
-    sweet
-    dconf
-    sxiv
-    dolphin-emu
-    qjoypad
-    # r2modman
-    xivlauncher
+  ui_packages = [
+    pkgs.fm
+    pkgs.krita
+    pkgs.jstest-gtk
+    pkgs.plex-media-player
+    pkgs.arandr
+    pkgs.blender
+    pkgs.audacity
+    pkgs.prismlauncher
+    pkgs.libsForQt5.spectacle
+    pkgs.keepassxc
+    pkgs.discord
+    pkgs.pavucontrol
+    pkgs.jetbrains-toolbox
+    pkgs.jetbrains.webstorm
+    pkgs.sweet
+    pkgs.dconf
+    pkgs.sxiv
+    pkgs.dolphin-emu
+    pkgs.qjoypad
+    pkgs.xivlauncher
+    # pkgs.element-desktop
+    # unstable.r2modman
   ];
   cli_packages = with pkgs; [
     lm_sensors
@@ -55,7 +55,9 @@ let
 in {
   home = {
     inherit stateVersion homeDirectory username;
-    sessionVariables.LOCALES_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+    sessionVariables = {
+      LOCALES_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+    };
 
     packages = if is_nixos then cli_packages ++ ui_packages else cli_packages;
     file = {
@@ -186,17 +188,12 @@ lsd -l $@
       enable = true;
 
       initExtra = ''
-[ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
-[ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
-
-# nix stuff
-export NIXPKGS_ALLOW_UNFREE=1
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/sbin"
 
 # Jetbrains
-export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
-
-# Rust config
-[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -205,10 +202,6 @@ if [ -d "$PYENV_ROOT" ] ; then
   eval "$(pyenv init --path)"
   eval "$(pyenv virtualenv-init -)"
 fi
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 '';
 
       shellAliases = {

@@ -31,7 +31,8 @@ let
     pkgs.dolphin-emu
     pkgs.qjoypad
     pkgs.xivlauncher
-    # pkgs.element-desktop
+    pkgs.element-desktop
+    pkgs.qFlipper
     # unstable.r2modman
   ];
   cli_packages = with pkgs; [

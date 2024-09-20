@@ -2,15 +2,16 @@
   description = "Home Manager configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
-    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, unstable }:
+  outputs = inputs@{ self, nixpkgs, home-manager }:
     let
       # Values you should modify
       username = "alex"; # $USER
@@ -23,14 +24,9 @@
 
         config = {
           allowUnfree = true;
-        };
-      };
-
-      unstable = import unstable {
-        inherit system;
-
-        config = {
-          allowUnfree = true;
+          nixpkgs.config.permittedInsecurePackages = [
+            "jitsi-meet-1.0.8043"
+          ];
         };
       };
 
@@ -38,7 +34,7 @@
       homeDirectory = "/${homeDirPrefix}/${username}";
 
       home = (import ./home.nix {
-        inherit homeDirectory pkgs stateVersion system username unstable;
+        inherit homeDirectory pkgs stateVersion system username;
       });
     in {
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
@@ -51,7 +47,7 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPkgs = true;
       home-manager.extraSpecialArgs = {
-        inherit unstable;
+        inherit nixpkgs;
       };
       # packages.${system}.default = import nixpkgs { inherit system; };
       defaultPackage.${system} = home-manager.defaultPackage.${system};

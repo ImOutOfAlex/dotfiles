@@ -1,6 +1,6 @@
 {
   homeDirectory,
-  unstable,
+  # unstable,
   pkgs,
   stateVersion,
   system,
@@ -14,7 +14,8 @@ let
     pkgs.fm
     pkgs.krita
     pkgs.jstest-gtk
-    pkgs.plex-media-player
+    pkgs.plex-desktop
+    pkgs.mumble
     pkgs.arandr
     pkgs.blender
     pkgs.audacity
@@ -31,8 +32,12 @@ let
     pkgs.dolphin-emu
     pkgs.qjoypad
     pkgs.xivlauncher
-    pkgs.element-desktop
+    # pkgs.element-desktop
     pkgs.qFlipper
+    pkgs.plover.dev
+    pkgs.jdk21
+    pkgs.starsector
+    # pkgs.godot_4
     # unstable.r2modman
   ];
   cli_packages = with pkgs; [
@@ -52,6 +57,7 @@ let
     ranger
     dtrx
     openssl
+    protontricks
   ];
 in {
   home = {
@@ -78,6 +84,8 @@ lsd -l $@
     };
     enableNixpkgsReleaseCheck = false;
   };
+
+  manual.manpages.enable = false;
 
   xdg.mimeApps = {
     enable = is_nixos;
@@ -117,6 +125,7 @@ lsd -l $@
     jq.enable = true;
     direnv = {
       enable = true;
+      enableBashIntegration = true;
       nix-direnv = {
         enable = true;
       };

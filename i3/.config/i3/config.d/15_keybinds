@@ -6,7 +6,7 @@ bindsym $mod+Shift+Return exec xterm
 bindsym $mod+Return exec alacritty
 bindsym $mod+i exec firefox
 bindsym $mod+l exec $HOME/.config/i3/scripts/power_features/lock.sh
-bindsym $mod+Shift+f exec spectacle -r -b
+bindsym $mod+Shift+f exec "flameshot gui"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -34,6 +34,9 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
+# convert to floating window
+bindsym $mod+Shift+b floating toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+z layout stacking

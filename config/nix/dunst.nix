@@ -1,8 +1,7 @@
 { ... }: {
   services = {
     dunst = {
-      # enable = true;
-      enable = false;
+      enable = true;
     };
   };
 }

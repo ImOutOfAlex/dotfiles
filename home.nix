@@ -10,7 +10,7 @@
     config/nix/cui.nix
     config/nix/cli_tools.nix
     config/nix/git.nix
-    config/nix/services.nix
+    config/nix/dunst.nix
     config/nix/ssh-agent.nix
   ];
 

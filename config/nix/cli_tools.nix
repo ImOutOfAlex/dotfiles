@@ -18,7 +18,6 @@ let
     # python311
     # mlocate
     # openssl
-    # protontricks
   ];
 in {
   home = {

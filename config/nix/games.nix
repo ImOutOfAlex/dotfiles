@@ -11,5 +11,6 @@
     # xivlauncher
     jdk21
     prismlauncher
+    # protontricks
   ];
 }

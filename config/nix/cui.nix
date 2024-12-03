@@ -5,30 +5,14 @@
   system,
   username,
   ...
-}:
-let
-  email = "ImOutOfAlex@her.farm";
-  git_user_name = "Alex";
-  cli_packages = with pkgs; [
-    lm_sensors
-    dua
-    stow
-    mimic
-    nodejs_20
-    usbutils
-    file
-    p7zip
-    unzip
-    unrar
-    dtrx
-    # python311
-    # mlocate
-    # openssl
-    # protontricks
-  ];
-in {
+}: {
   home = {
-    packages = cli_packages;
+    packages = with pkgs; [
+      p7zip
+      unzip
+      unrar
+      dtrx
+    ];
     file = {
       ".local/bin/s" = {
         executable = true;
@@ -49,9 +33,6 @@ lsd -l $@
   programs = {
     bat.enable = true;
     lsd.enable = true;
-    ripgrep.enable = true;
-    jq.enable = true;
-    btop.enable = true;
 
     direnv = {
       enable = true;
@@ -103,11 +84,6 @@ lsd -l $@
         swift = { symbol = "ﯣ "; };
       };
     };
-
-    # mise = {
-    #   enable = true;
-    #   enableBashIntegration = true;
-    # };
 
     bash = {
       enable = true;

@@ -1,6 +1,5 @@
 {
   homeDirectory,
-  # unstable,
   pkgs,
   stateVersion,
   system,
@@ -38,12 +37,10 @@ let
     pkgs.jdk21
     pkgs.starsector
     # pkgs.godot_4
-    # unstable.r2modman
   ];
   cli_packages = with pkgs; [
     lm_sensors
     dua
-    jq
     stow
     mimic
     nodejs_20
@@ -54,7 +51,6 @@ let
     p7zip
     unzip
     unrar
-    ranger
     dtrx
     openssl
     protontricks
@@ -123,12 +119,18 @@ lsd -l $@
     lsd.enable = true;
     ripgrep.enable = true;
     jq.enable = true;
+    btop.enable = true;
+
     direnv = {
       enable = true;
       enableBashIntegration = true;
       nix-direnv = {
         enable = true;
       };
+    };
+
+    ranger = {
+      enable = true;
     };
 
     starship = {
@@ -189,15 +191,23 @@ lsd -l $@
       ];
     };
 
-    mise = {
-      enable = true;
-      enableBashIntegration = true;
-    };
+    # mise = {
+    #   enable = true;
+    #   enableBashIntegration = true;
+    # };
 
     bash = {
       enable = true;
 
       initExtra = ''
+# if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+#   eval $(ssh-agent -s)
+#   # sway --unsupported-gpu
+#   startx
+# fi
+
+shopt -s autocd
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/sbin"
@@ -212,6 +222,10 @@ if [ -d "$PYENV_ROOT" ] ; then
   eval "$(pyenv init --path)"
   eval "$(pyenv virtualenv-init -)"
 fi
+
+# Protontricks
+alias protontricks='flatpak run com.github.Matoking.protontricks'
+alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
 '';
 
       shellAliases = {
@@ -239,6 +253,8 @@ fi
         theme = "base16_default_dark";
       };
     };
+
+    # GUI stuff
 
     firefox.enable = is_nixos;
 

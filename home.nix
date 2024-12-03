@@ -11,6 +11,7 @@
     config/nix/cli_tools.nix
     config/nix/git.nix
     config/nix/services.nix
+    config/nix/ssh-agent.nix
   ];
 
   home = {

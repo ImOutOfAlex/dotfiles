@@ -11,6 +11,7 @@
     config/nix/cli_tools.nix
     config/nix/git.nix
     # config/nix/dunst.nix
+    config/nix/games.nix
     config/nix/ssh-agent.nix
   ];
 

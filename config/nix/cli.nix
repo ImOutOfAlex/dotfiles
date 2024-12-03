@@ -104,25 +104,6 @@ lsd -l $@
       };
     };
 
-    git = {
-      enable = true;
-      lfs = {
-        enable = true;
-      };
-      userEmail = email;
-      userName = git_user_name;
-      difftastic = {
-        enable = true;
-      };
-      extraConfig = {
-        push.default = "current";
-        init.defaultBranch = "main";
-      };
-      ignores = [
-        ".idea"
-      ];
-    };
-
     # mise = {
     #   enable = true;
     #   enableBashIntegration = true;

@@ -13,6 +13,7 @@ in {
     config/nix/common.nix
     config/nix/gui.nix
     config/nix/cli.nix
+    config/nix/git.nix
   ];
 
   home = {

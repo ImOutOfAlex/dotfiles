@@ -7,41 +7,38 @@
   ...
 }:
 let
-  email = "ImOutOfAlex@her.farm";
-  git_user_name = "Alex";
   is_nixos = true;
-  ui_packages = [
-    pkgs.fm
-    pkgs.jstest-gtk
-    pkgs.mumble
-    pkgs.arandr
-    pkgs.audacity
-    pkgs.prismlauncher
-    pkgs.keepassxc
-    pkgs.pavucontrol
-    pkgs.sweet
-    pkgs.dconf
-    pkgs.sxiv
-    pkgs.dolphin-emu
-    pkgs.qjoypad
-    pkgs.qFlipper
-    pkgs.plover.dev
-    pkgs.jdk21
-    pkgs.starsector
-    # pkgs.krita
-    # pkgs.plex-desktop
-    # pkgs.blender
-    # pkgs.libsForQt5.spectacle
-    # pkgs.discord
-    # pkgs.jetbrains-toolbox
-    # pkgs.jetbrains.webstorm
-    # pkgs.xivlauncher
-    # pkgs.element-desktop
-    # pkgs.godot_4
-  ];
 in {
   home = {
-    packages = ui_packages;
+    packages = [
+      pkgs.fm
+      pkgs.jstest-gtk
+      pkgs.mumble
+      pkgs.arandr
+      pkgs.audacity
+      pkgs.prismlauncher
+      pkgs.keepassxc
+      pkgs.pavucontrol
+      pkgs.sweet
+      pkgs.dconf
+      pkgs.sxiv
+      pkgs.dolphin-emu
+      pkgs.qjoypad
+      pkgs.qFlipper
+      pkgs.plover.dev
+      pkgs.jdk21
+      pkgs.starsector
+      # pkgs.krita
+      # pkgs.plex-desktop
+      # pkgs.blender
+      # pkgs.libsForQt5.spectacle
+      # pkgs.discord
+      # pkgs.jetbrains-toolbox
+      # pkgs.jetbrains.webstorm
+      # pkgs.xivlauncher
+      # pkgs.element-desktop
+      # pkgs.godot_4
+    ];
   };
 
   gtk = {
@@ -53,8 +50,6 @@ in {
   };
 
   programs = {
-    # GUI stuff
-
     firefox = {
       # enable = is_nixos;
       enable = false;

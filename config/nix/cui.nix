@@ -85,14 +85,7 @@ lsd -l $@
       enable = true;
 
       initExtra = ''
-shopt -s autocd
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export PATH="$PATH:$HOME/bin"
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.local/sbin"
-
-# Jetbrains
-export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.local/sbin"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -118,6 +111,18 @@ alias protontricks-launch='flatpak run --command=protontricks-launch com.github.
         r = "ranger";
         dtrx = "dtrx --one=inside";
       };
+
+      shellOptions = [
+        "autocd"
+        "cdable_vars"
+        "checkhash"
+        "checkjobs"
+        "checkwinsize"
+        "dirspell"
+        "extglob"
+        "globstar"
+        "histappend"
+      ];
     };
 
     fzf = {

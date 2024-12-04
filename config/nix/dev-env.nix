@@ -10,6 +10,9 @@
       jetbrains.webstorm
       godot_4
     ];
+    file.".config/environment.d/jb_toolbox.conf" = {
+      text = "PATH=\"\$PATH:\$HOME/.local/share/JetBrains/Toolbox/scripts\"";
+    };
   };
   programs = {
     mise = {

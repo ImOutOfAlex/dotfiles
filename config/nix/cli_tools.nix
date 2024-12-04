@@ -8,13 +8,10 @@
       dua
       stow
       mimic
-      nodejs_20
-      # python311
       usbutils
       file
       # mlocate
       # openssl
-      # protontricks
     ];
   };
 
@@ -22,10 +19,5 @@
     ripgrep.enable = true;
     jq.enable = true;
     btop.enable = true;
-
-    # mise = {
-    #   enable = true;
-    #   enableBashIntegration = true;
-    # };
   };
 }

@@ -20,7 +20,6 @@ in {
       pkgs.sweet
       pkgs.dconf
       pkgs.sxiv
-      pkgs.qjoypad
       pkgs.qFlipper
       pkgs.plover.dev
       # pkgs.krita
@@ -28,10 +27,7 @@ in {
       # pkgs.blender
       # pkgs.libsForQt5.spectacle
       # pkgs.discord
-      # pkgs.jetbrains-toolbox
-      # pkgs.jetbrains.webstorm
       # pkgs.element-desktop
-      # pkgs.godot_4
     ];
   };
 

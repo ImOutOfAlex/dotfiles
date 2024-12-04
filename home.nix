@@ -9,6 +9,7 @@
     config/nix/gui.nix
     config/nix/cui.nix
     config/nix/cli_tools.nix
+    config/nix/gui_tools.nix
     config/nix/git.nix
     # config/nix/dunst.nix
     # config/nix/dev-env.nix

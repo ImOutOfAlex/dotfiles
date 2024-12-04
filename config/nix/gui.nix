@@ -1,38 +1,28 @@
 {
-  homeDirectory,
   pkgs,
-  stateVersion,
-  system,
-  username,
   ...
 }:
 let
-  is_nixos = true;
 in {
   home = {
-    packages = [
-      pkgs.fm
-      pkgs.mumble
-      pkgs.arandr
-      pkgs.audacity
-      pkgs.keepassxc
-      pkgs.pavucontrol
-      pkgs.sweet
-      pkgs.dconf
-      pkgs.sxiv
-      pkgs.qFlipper
-      pkgs.plover.dev
-      # pkgs.krita
-      # pkgs.plex-desktop
-      # pkgs.blender
-      # pkgs.libsForQt5.spectacle
-      # pkgs.discord
-      # pkgs.element-desktop
+    packages = with pkgs; [
+      # Managers
+      fm
+      keepassxc
+      pavucontrol
+      dconf
+
+      # GTK
+      sweet
+
+      # Helpful tools
+      sxiv
+      # libsForQt5.spectacle
     ];
   };
 
   gtk = {
-    enable = is_nixos;
+    enable = true;
     theme = {
       name = "Sweet-Dark";
       package = pkgs.sweet;
@@ -40,18 +30,8 @@ in {
   };
 
   programs = {
-    firefox = {
-      # enable = is_nixos;
-      enable = false;
-    };
-
-    mpv = {
-      # enable = is_nixos;
-      enable = false;
-    };
-    
     alacritty = {
-      # enable = is_nixos;
+      # enable = true;
       enable = false;
       settings = {
         font = {
@@ -63,7 +43,7 @@ in {
     };
 
     rofi = {
-      enable = is_nixos;
+      enable = true;
       theme = "solarized";
       terminal = "alacritty";
       extraConfig = {

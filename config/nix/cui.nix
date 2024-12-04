@@ -1,9 +1,5 @@
 {
-  homeDirectory,
   pkgs,
-  stateVersion,
-  system,
-  username,
   ...
 }: {
   home = {
@@ -89,12 +85,6 @@ lsd -l $@
       enable = true;
 
       initExtra = ''
-# if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-#   eval $(ssh-agent -s)
-#   # sway --unsupported-gpu
-#   startx
-# fi
-
 shopt -s autocd
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export PATH="$PATH:$HOME/bin"

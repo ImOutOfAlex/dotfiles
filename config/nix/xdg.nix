@@ -21,5 +21,17 @@
       recursive = true;
       source = ../i3;
     };
+    configFile."i3blocks" = {
+      enable = true;
+      executable = true;
+      recursive = true;
+      source = ../i3blocks;
+    };
+    configFile."conky" = {
+      enable = true;
+      executable = true;
+      recursive = true;
+      source = ../conky;
+    };
   };
 }

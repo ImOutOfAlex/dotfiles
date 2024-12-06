@@ -8,6 +8,7 @@
     config/nix/common.nix
     config/nix/gui.nix
     config/nix/cui.nix
+    config/nix/xdg.nix
     config/nix/cli_tools.nix
     config/nix/gui_tools.nix
     config/nix/git.nix

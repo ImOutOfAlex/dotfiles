@@ -87,6 +87,9 @@ lsd -l $@
       initExtra = ''
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.local/sbin"
 
+export FZF_CTRL_T_OPTS="
+  --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 if [ -d "$PYENV_ROOT" ] ; then

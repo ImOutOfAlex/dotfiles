@@ -87,6 +87,16 @@ lsd -l $@
       initExtra = ''
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.local/sbin"
 
+CLANG_PATH=/usr/bin/clang
+CLANGPP_PATH=/usr/bin/clang++
+
+if [ -f $CLANG_PATH  ]; then
+  export CC=$CLANG_PATH
+fi
+if [ -f $CLANGPP_PATH  ]; then
+  export CXX=$CLANGPP_PATH
+fi
+
 export FZF_CTRL_T_OPTS="
   --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
@@ -97,10 +107,6 @@ if [ -d "$PYENV_ROOT" ] ; then
   eval "$(pyenv init --path)"
   eval "$(pyenv virtualenv-init -)"
 fi
-
-# Protontricks
-alias protontricks='flatpak run com.github.Matoking.protontricks'
-alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'
 '';
 
       shellAliases = {
@@ -113,6 +119,10 @@ alias protontricks-launch='flatpak run --command=protontricks-launch com.github.
         vim = "hx";
         r = "ranger";
         dtrx = "dtrx --one=inside";
+
+        # flatpak things
+        protontricks = "flatpak run com.github.Matoking.protontricks";
+        protontricks-launch = "flatpak run --command=protontricks-launch com.github.Matoking.protontricks";
       };
 
       shellOptions = [

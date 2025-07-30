@@ -6,11 +6,10 @@
     jstest-gtk
     dolphin-emu
     qjoypad
-    jdk21
     starsector
     # xivlauncher
-    jdk21
-    prismlauncher
+    # jdk21
+    # prismlauncher
     # protontricks
   ];
 }

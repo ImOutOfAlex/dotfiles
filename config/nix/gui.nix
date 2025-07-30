@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   ...
 }:
@@ -14,6 +15,9 @@ in {
 
       # GTK
       sweet
+
+      # Other Theme
+      cyberpunk-neon
 
       # Helpful tools
       sxiv

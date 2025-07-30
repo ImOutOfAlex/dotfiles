@@ -12,6 +12,7 @@
       file
       # mlocate
       # openssl
+      sage
     ];
   };
 

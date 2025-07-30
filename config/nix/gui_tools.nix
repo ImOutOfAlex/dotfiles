@@ -2,35 +2,23 @@
   pkgs,
   ...
 }: {
-  home = {
-    packages = with pkgs; [
-      # Chat systems
-      mumble
-      # discord
-      # element-desktop
+  home.packages = with pkgs; [
+    # Chat systems
+    mumble
+    # discord
+    # element-desktop
 
-      # UI based editors
-      audacity
-      # krita
-      # blender
+    # UI based editors
+    audacity
+    # krita
+    # blender
 
-      # Video
-      # plex-desktop
+    # Video
+    # plex-desktop
+    # mpv
 
-      # Helpful tools
-      qFlipper
-    ];
-  };
-
-  programs = {
-    firefox = {
-      # enable = true;
-      enable = false;
-    };
-
-    mpv = {
-      # enable = true;
-      enable = false;
-    };
-  };
+    # Helpful tools
+    qFlipper
+    # firefox
+  ];
 }

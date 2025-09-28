@@ -107,6 +107,11 @@ if [ -d "$PYENV_ROOT" ] ; then
   eval "$(pyenv init --path)"
   eval "$(pyenv virtualenv-init -)"
 fi
+
+# Mise
+if command -v mise $>/dev/null; then
+  eval "$(mise activate bash)"
+fi
 '';
 
       shellAliases = {

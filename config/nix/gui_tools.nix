@@ -4,12 +4,12 @@
 }: {
   home.packages = with pkgs; [
     # Chat systems
-    mumble
+    # mumble
     # discord
     # element-desktop
 
     # UI based editors
-    audacity
+    # audacity
     # krita
     # blender
 
@@ -18,7 +18,7 @@
     # mpv
 
     # Helpful tools
-    qFlipper
+    # qFlipper
     # firefox
   ];
 }
